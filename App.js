@@ -1,12 +1,27 @@
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
+<<<<<<< Updated upstream
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+=======
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+>>>>>>> Stashed changes
 
 export default function App() {
   
   
   return (
     <View style={styles.container}>
+<<<<<<< Updated upstream
+=======
+      <Image 
+      style={styles.logo}
+      source={require('@images/logoOt.jpg')}></Image>
+      <Text style={styles.text}>Por favor responda algumas perguntas</Text>
+      <TouchableOpacity style={styles.button}>
+      <Text style={styles.buttonText}>OK</Text>
+      </TouchableOpacity>
+>>>>>>> Stashed changes
       <StatusBar style="auto" />
       <Text style={styles.textprincipal}>Digite a senha</Text>
       <TextInput
@@ -24,10 +39,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#43878D",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
+<<<<<<< Updated upstream
   textprincipal: {
     color: '#000',
     fontSize: 30,
@@ -49,4 +65,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+=======
+  text:{
+    color:"#fff",
+    marginVertical:50,
+    fontSize:60,
+    fontWeight:'900',
+  },
+  button:{
+    backgroundColor: "#F4EFF4",
+    paddingHorizontal:35,
+    paddingVertical:5,
+    borderRadius:10,
+  },
+  buttonText:{
+    color:"#302D2D",
+    fontWeight:'900',
+    fontSize:60,
+  },
+  logo:{
+    width:200,
+    height:200,
+    marginVertical:50,
+    backgroundColor:"#fff",
+    borderRadius:10,
+  }
+>>>>>>> Stashed changes
 });
