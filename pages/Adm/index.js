@@ -16,6 +16,9 @@ export default function Adm({ navigation }) {
             <Text style={styles.buttonText}>Geral</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Funcionarios</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Perguntas</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
@@ -48,7 +51,7 @@ export default function Adm({ navigation }) {
         height:100,
         backgroundColor: "#302D2D",
         borderRadius:10,
-        margin:20,
+        margin:15,
 
     },
     buttonText:{
