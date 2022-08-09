@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
       style={styles.logo}
       source={require('./logoOt.jpg')}></Image>
       <Text style={styles.text}>Por favor responda algumas perguntas</Text>
-      <TouchableOpacity style={styles.button} onLongPress={() => navigation.navigate ('Adm')}>
+      <TouchableOpacity style={styles.button} delayLongPress={5000} onLongPress={() => navigation.navigate ('Adm')}>
       <Text style={styles.buttonText}>OK</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

@@ -16,8 +16,8 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home" component={ Home } />
         <Stack.Screen name="Adm" component={ Adm } />
+        <Stack.Screen name="Home" component={ Home } />
       </Stack.Navigator>
     </NavigationContainer>
 
