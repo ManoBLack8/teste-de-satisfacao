@@ -1,51 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import {useState} from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import * as ScreenOrientation from 'expo-screen-orientation'
+import Home from './pages/Home';
+import Adm from './pages/Adm';
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [orientationIsLandscape,setOrientation]=useState(true)
   return (
-    <View style={styles.container}>
-      <Image 
-      style={styles.logo}
-      source={require('@images/logoOt.jpg')}></Image>
-      <Text style={styles.text}>Por favor responda algumas perguntas</Text>
-      <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>OK</Text>
-      </TouchableOpacity>
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name="Home" component={ Home } />
+        <Stack.Screen name="Adm" component={ Adm } />
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#43878D",
-    alignItems: "center",
-    justifyContent: "flex-start",
-  },
-  text:{
-    color:"#fff",
-    marginVertical:50,
-    fontSize:60,
-    fontWeight:'900',
-  },
-  button:{
-    backgroundColor: "#F4EFF4",
-    paddingHorizontal:35,
-    paddingVertical:5,
-    borderRadius:10,
-  },
-  buttonText:{
-    color:"#302D2D",
-    fontWeight:'900',
-    fontSize:60,
-  },
-  logo:{
-    width:200,
-    height:200,
-    marginVertical:50,
-    backgroundColor:"#fff",
-    borderRadius:10,
-  }
-});
