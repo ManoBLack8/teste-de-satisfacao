@@ -1,9 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import {
+  useFonts
+} from 'expo-font';
 
 
 export default function Home({ navigation }) {
+  const [loaded] = useFonts({
+    Oswald:require('./Oswald_700Bold.ttf'),
+  });
     return (
 <View style={styles.container}>
       <Image 

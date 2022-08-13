@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 
 export default function Home({ navigation }) {
+    setTimeout(() => {
+        navigation.navigate ('Home')
+    }, 10000);
     return (
 <View style={styles.container}>
     <Image 
@@ -12,9 +15,6 @@ export default function Home({ navigation }) {
     <View style={styles.textContainer}>
       <Text style={styles.text}>Obrigado pela preferencia, volte sempre</Text>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Home')}>
-      <Text style={styles.buttonText}>OK</Text>
-      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
     );
