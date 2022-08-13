@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
+
 export default function Home({ navigation }) {
     return (
 <View style={styles.container}>
@@ -9,7 +10,7 @@ export default function Home({ navigation }) {
       style={styles.logo}
       source={require('./logoOt.jpg')}></Image>
       <Text style={styles.text}>Por favor responda algumas perguntas</Text>
-      <TouchableOpacity style={styles.button} delayLongPress={5000} onLongPress={() => navigation.navigate ('Adm')}>
+      <TouchableOpacity style={styles.button} delayLongPress={5000} onLongPress={() => navigation.navigate ('Adm')} onPress={() => navigation.navigate ('Perguntas')}>
       <Text style={styles.buttonText}>OK</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
@@ -19,25 +20,27 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#43878D",
+      backgroundColor: "#302D2D",
       alignItems: "center",
       justifyContent: "flex-start",
     },
     text:{
       color:"#fff",
       marginVertical:50,
-      fontSize:60,
-      fontWeight:'900',
+      fontSize:70,
+      fontFamily: 'Oswald',
     },
     button:{
       backgroundColor: "#F4EFF4",
-      paddingHorizontal:35,
-      paddingVertical:5,
+      paddingHorizontal:50,
+      width:200,
       borderRadius:10,
+      justifyContent:"center",
+      alignItems:"center",
     },
     buttonText:{
       color:"#302D2D",
-      fontWeight:'900',
+      fontFamily:'Oswald',
       fontSize:60,
     },
     logo:{
@@ -47,4 +50,5 @@ export default function Home({ navigation }) {
       backgroundColor:"#fff",
       borderRadius:10,
     }
+    
   });

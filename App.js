@@ -6,11 +6,18 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as ScreenOrientation from 'expo-screen-orientation'
 import Home from './pages/Home';
 import Adm from './pages/Adm';
+import Perguntas from './pages/Perguntas'
+import {
+  useFonts
+} from 'expo-font';
 
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [loaded] = useFonts({
+    Oswald: require('./assets/fonts/Oswald_700Bold.ttf'),
+  });
   const [orientationIsLandscape,setOrientation]=useState(true)
   return (
     <NavigationContainer>
@@ -18,9 +25,9 @@ export default function App() {
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="Adm" component={ Adm } />
         <Stack.Screen name="Home" component={ Home } />
+        <Stack.Screen name="Perguntas" component={ Perguntas } />
       </Stack.Navigator>
     </NavigationContainer>
-
   );
 }
 
