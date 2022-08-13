@@ -18,8 +18,8 @@ export default function Home({ navigation }) {
       <Image style={styles.questionImg} source={require('./sadIcon.png')}></Image>
       </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas')}>
-      <Text style={styles.buttonText}>OK</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Obrigado')}>
+      <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
@@ -57,7 +57,7 @@ export default function Home({ navigation }) {
     button:{
       backgroundColor: "#F4EFF4",
       paddingHorizontal:50,
-      width:200,
+      width:350,
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",

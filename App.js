@@ -6,7 +6,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as ScreenOrientation from 'expo-screen-orientation'
 import Home from './pages/Home';
 import Adm from './pages/Adm';
-import Perguntas from './pages/Perguntas'
+import Perguntas from './pages/Perguntas';
+import Obrigado from './pages/Obrigado';
+import Dados from './pages/Dados';
+import Final from './pages/Final';
+
 import {
   useFonts
 } from 'expo-font';
@@ -26,6 +30,9 @@ export default function App() {
         <Stack.Screen name="Adm" component={ Adm } />
         <Stack.Screen name="Home" component={ Home } />
         <Stack.Screen name="Perguntas" component={ Perguntas } />
+        <Stack.Screen name="Obrigado" component={ Obrigado } />
+        <Stack.Screen name="Dados" component={ Dados } />
+        <Stack.Screen name="Final" component={ Final } />
       </Stack.Navigator>
     </NavigationContainer>
   );
