@@ -11,6 +11,7 @@ import Obrigado from './pages/Obrigado';
 import Dados from './pages/Dados';
 import Final from './pages/Final';
 
+
 import {
   useFonts
 } from 'expo-font';
