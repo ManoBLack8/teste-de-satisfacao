@@ -7,7 +7,7 @@ export default function Home({ navigation }) {
     return (
 <View style={styles.container}>
       <Text style={styles.text}>lorem ipsum</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1')}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

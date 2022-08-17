@@ -9,6 +9,7 @@ import Adm from './pages/Adm';
 import Perguntas from './pages/Perguntas';
 import Obrigado from './pages/Obrigado';
 import Dados from './pages/Dados';
+import page1 from './pages/Dados/page1';
 import Final from './pages/Final';
 
 
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Perguntas" component={ Perguntas } />
         <Stack.Screen name="Obrigado" component={ Obrigado } />
         <Stack.Screen name="Dados" component={ Dados } />
+        <Stack.Screen name="Dadospage1" component={ page1 } />
         <Stack.Screen name="Final" component={ Final } />
       </Stack.Navigator>
     </NavigationContainer>
