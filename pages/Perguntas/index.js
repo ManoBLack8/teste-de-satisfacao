@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight, Pressable } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
 
 
 export default function Home({ navigation }) {
@@ -55,7 +55,7 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#43878D",
+      backgroundColor: "#302D2D",
       alignItems: "center",
       justifyContent: "flex-start",
     },

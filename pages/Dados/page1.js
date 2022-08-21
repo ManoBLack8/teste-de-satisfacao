@@ -1,32 +1,49 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacity, TextInput } from 'react-native';
 
 
 export default function Home({ navigation }) {
+  const [isPressF, setisPressF] = useState(false);
+  const [isPressM, setIsisPressM] = useState(false);
+  const touchPropsF = {
+    activeOpacity: 1,
+    underlayColor: 'black',
+    style: isPressF ? styles.btnPress : styles.btnNormal,
+    onHideUnderlay: () => setisPressF(true),
+    onShowUnderlay: () => setisPressF(true),
+    onPress: () => {setIsisPressM(false)},
+  };
+  const touchPropsM = {
+    activeOpacity: 1,
+    underlayColor: 'black',
+    style: isPressM ? styles.btnPress : styles.btnNormal,
+    onHideUnderlay: () => setIsisPressM(true),
+    onShowUnderlay: () => setIsisPressM(true),
+    onPress: () => {setisPressF(false)},
+  };
+
     return (
 <View style={styles.container}>
-      <Text style={styles.text}>Sexo:</Text>
     <View style={styles.SexoContainer}>
+        <Text style={styles.text}>Sexo:</Text>
         <View style={styles.textButtonContainer}>
         <Text style={styles.text}>F</Text>
-        <TouchableOpacity style={styles.buttonSexo}>
-        </TouchableOpacity>
+        <TouchableHighlight {...touchPropsF}>
+        <Text style={styles.buttonSexo}></Text>
+        </TouchableHighlight>
         </View>
-
-        <View tyle={styles.textButtonContainer}>
+        <View style={styles.textButtonContainer}>
         <Text style={styles.text}>M</Text>
-        <TouchableOpacity style={styles.buttonSexo}>
-        
-        </TouchableOpacity>
-        </View>
-
-        <View tyle={styles.textButtonContainer}>
-        <TouchableOpacity style={styles.buttonSexo}>
-        
-        </TouchableOpacity>
+        <TouchableHighlight {...touchPropsM}>
+        <Text style={styles.buttonSexo}></Text>
+        </TouchableHighlight>
         </View>
     </View>
+      <View style={styles.inputContainer}>
+      <Text style={styles.text}>Idade: </Text>
+      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#000000"/>
+      </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
@@ -37,7 +54,7 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#43878D",
+      backgroundColor: "#302D2D",
       alignItems: "center",
       justifyContent: "flex-start",
     },
@@ -49,18 +66,47 @@ export default function Home({ navigation }) {
     },
     SexoContainer:{
         flexDirection:'row',
+        marginVertical:30,
+        marginTop:100,
     },
     buttonSexo:{
         backgroundColor:"#F4EFF4",
-        width:40,
-        height:40,
+        width:70,
+        height:70,
+        borderRadius: 50,
+    },
+    btnPress: {
+      opacity:0.1,
+      backgroundColor:"#F4EFF4",
+      borderRadius: 50,
+      width:70,
+      height:70,
+    },
+    btnNormal: {
+      borderRadius: 50,
+      width:70,
+      height:70,
     },
     textButtonContainer:{
         flexDirection:'row',
         justifyContent:'flex-end',
         alignItems:'center',
     },
-
+    inputContainer:{
+      flexDirection:'row',
+      justifyContent:'flex-start',
+      alignItems:'center',
+      marginVertical:60,
+    },
+    input: {
+      height: 70,
+      width:100,
+      fontSize:50,
+      borderBottomWidth:3,
+      marginTop:15,
+      fontFamily: 'Oswald',
+      color:"#fff",
+    },
     button:{
       backgroundColor: "#F4EFF4",
       paddingHorizontal:50,
