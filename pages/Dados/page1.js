@@ -42,7 +42,7 @@ export default function Home({ navigation }) {
     </View>
       <View style={styles.inputContainer}>
       <Text style={styles.text}>Idade: </Text>
-      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#000000"/>
+      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#D0D0D0"/>
       </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
       <Text style={styles.buttonText}>Proximo</Text>
