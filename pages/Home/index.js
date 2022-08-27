@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
       style={styles.logo}
       source={require('./logoOt.jpg')}></Image>
       <Text style={styles.text}>Por favor responda algumas perguntas</Text>
-      <TouchableOpacity style={styles.button} delayLongPress={5000} onLongPress={() => navigation.navigate ('Adm')} onPress={() => navigation.navigate ('Perguntas')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas')}>
       <Text style={styles.buttonText}>OK</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
@@ -29,11 +29,12 @@ export default function Home({ navigation }) {
       backgroundColor: "#302D2D",
       alignItems: "center",
       justifyContent: "flex-start",
+      width:'100%',
+      height:'100%'
     },
     text:{
       color:"#fff",
-      marginVertical:50,
-      fontSize:70,
+      fontSize:60,
       fontFamily: 'Oswald',
     },
     button:{
