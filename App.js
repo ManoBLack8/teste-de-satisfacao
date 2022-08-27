@@ -10,6 +10,7 @@ import Obrigado from './pages/Obrigado';
 import Dados from './pages/Dados';
 import page1 from './pages/Dados/page1';
 import Final from './pages/Final';
+import api from './src/Services/Api';
 
 
 import {
@@ -20,6 +21,8 @@ import {
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  
   const [loaded] = useFonts({
     Oswald:require('./assets/fonts/Oswald_700Bold.ttf'),
   });
