@@ -29,7 +29,7 @@ export default function Home({ navigation }) {
     text:{
       color:"#fff",
       marginVertical:50,
-      fontSize:70,
+      fontSize:60,
       fontFamily: 'Oswald',
     },
     button:{

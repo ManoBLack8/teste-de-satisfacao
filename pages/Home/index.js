@@ -29,11 +29,12 @@ export default function Home({ navigation }) {
       backgroundColor: "#302D2D",
       alignItems: "center",
       justifyContent: "flex-start",
+      width:'100%',
+      height:'100%'
     },
     text:{
       color:"#fff",
-      marginVertical:50,
-      fontSize:70,
+      fontSize:60,
       fontFamily: 'Oswald',
     },
     button:{

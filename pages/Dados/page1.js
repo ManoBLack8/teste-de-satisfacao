@@ -60,8 +60,8 @@ export default function Home({ navigation }) {
     },
     text:{
       color:"#fff",
-      marginHorizontal:60,
-      fontSize:70,
+      marginHorizontal:50,
+      fontSize:60,
       fontFamily: 'Oswald',
     },
     SexoContainer:{
