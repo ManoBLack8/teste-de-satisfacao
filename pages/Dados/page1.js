@@ -56,7 +56,9 @@ export default function Home({ navigation }) {
       flex: 1,
       backgroundColor: "#302D2D",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "space-evenly",
+      width:'100%',
+      height:'100%',
     },
     text:{
       color:"#fff",
@@ -66,8 +68,7 @@ export default function Home({ navigation }) {
     },
     SexoContainer:{
         flexDirection:'row',
-        marginVertical:30,
-        marginTop:100,
+        
     },
     buttonSexo:{
         backgroundColor:"#F4EFF4",
@@ -96,7 +97,7 @@ export default function Home({ navigation }) {
       flexDirection:'row',
       justifyContent:'flex-start',
       alignItems:'center',
-      marginVertical:60,
+      
     },
     input: {
       height: 70,

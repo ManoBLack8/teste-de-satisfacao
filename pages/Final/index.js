@@ -24,11 +24,13 @@ export default function Home({ navigation }) {
       flex: 1,
       backgroundColor: "#302D2D",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "space-evenly",
+      width:'100%',
+      height:'100%',
     },
     text:{
       color:"#fff",
-      marginVertical:50,
+      
       fontSize:60,
       fontFamily: 'Oswald',
     },
@@ -48,7 +50,6 @@ export default function Home({ navigation }) {
     logo:{
       width:200,
       height:200,
-      marginVertical:50,
       backgroundColor:"#fff",
       borderRadius:10,
     }

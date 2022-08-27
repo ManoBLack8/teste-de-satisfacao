@@ -57,11 +57,12 @@ export default function Home({ navigation }) {
       flex: 1,
       backgroundColor: "#302D2D",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "space-evenly",
+      width:'100%',
+      height:'100%',
     },
     text:{
       color:"#fff",
-      marginVertical:50,
       fontSize:70,
       fontFamily: 'Oswald',
     },
@@ -71,7 +72,7 @@ export default function Home({ navigation }) {
     },
     qButtonContainer:{
         flexDirection:'row',
-        marginVertical:50,
+        
         
     },
     btnPress: {

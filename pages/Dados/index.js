@@ -26,11 +26,12 @@ export default function Home({ navigation }) {
       flex: 1,
       backgroundColor: "#302D2D",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "space-evenly",
+      width:'100%',
+      height:'100%',
     },
     text:{
       color:"#fff",
-      marginVertical:50,
       fontSize:70,
       fontFamily: 'Oswald',
     },
@@ -41,7 +42,7 @@ export default function Home({ navigation }) {
     },
     input: {
       height: 70,
-      width:500,
+      width:'40%',
       fontSize:50,
       borderBottomWidth:2,
       marginTop:15,

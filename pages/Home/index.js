@@ -28,9 +28,9 @@ export default function Home({ navigation }) {
       flex: 1,
       backgroundColor: "#302D2D",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "space-evenly",
       width:'100%',
-      height:'100%'
+      height:'100%',
     },
     text:{
       color:"#fff",
@@ -39,7 +39,7 @@ export default function Home({ navigation }) {
     },
     button:{
       backgroundColor: "#F4EFF4",
-      paddingHorizontal:50,
+      
       width:200,
       borderRadius:10,
       justifyContent:"center",
@@ -53,7 +53,6 @@ export default function Home({ navigation }) {
     logo:{
       width:200,
       height:200,
-      marginVertical:50,
       backgroundColor:"#fff",
       borderRadius:10,
     }
