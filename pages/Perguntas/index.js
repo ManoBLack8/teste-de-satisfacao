@@ -32,23 +32,27 @@ export default function Home({ navigation }) {
     onPress: () => {setIsPressHappy(false);setIsPressNeutral(false)},
   };
     return (
-<View style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.text}>lorem ipsum</Text>
       <View style={styles.qButtonContainer}>
       <TouchableHighlight {...touchPropsHappy}>
       <Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>
       </TouchableHighlight>
+
       <TouchableHighlight {...touchPropsNeutral}>
       <Image style={styles.questionImg} source={require('./neutralIcon.png')}></Image>
       </TouchableHighlight>
+
       <TouchableHighlight {...touchPropsSad}>
       <Image style={styles.questionImg} source={require('./sadIcon.png')}></Image>
       </TouchableHighlight>
+
       </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Obrigado')}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
+
     </View>
     );
   }
