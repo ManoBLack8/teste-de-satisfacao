@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
-import getPerguntas from '../../src/Services/Api';
 
 export default function Home({ navigation }) {
   const baseUrl = 'https://apimanoblack.000webhostapp.com/cental-optica-api/';
