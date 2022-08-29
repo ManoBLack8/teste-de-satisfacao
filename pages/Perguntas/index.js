@@ -1,9 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
+import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
-
+import getPerguntas from '../../src/Services/Api';
 
 export default function Home({ navigation }) {
+  const baseUrl = 'https://apimanoblack.000webhostapp.com/cental-optica-api/';
+  
+
+  const perguta = axios.get(`${baseUrl}`).then((response) => {
+    return response.data;
+  });
   const [isPressHappy, setIsPressHappy] = useState(false);
   const [isPressNeutral, setIsPressNeutral] = useState(false);
   const [isPressSad, setIsPressSad] = useState(false);
@@ -31,9 +38,11 @@ export default function Home({ navigation }) {
     onShowUnderlay: () => setIsPressSad(true),
     onPress: () => {setIsPressHappy(false);setIsPressNeutral(false)},
   };
+  
     return (
+      
     <View style={styles.container}>
-      <Text style={styles.text}>lorem ipsum</Text>
+      <Text style={styles.text}>{`${perguta}`}</Text>
       <View style={styles.qButtonContainer}>
       <TouchableHighlight {...touchPropsHappy}>
       <Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>

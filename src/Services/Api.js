@@ -1,6 +1,21 @@
 import axios from 'axios';
+const baseUrl = 'https://apimanoblack.000webhostapp.com/cental-optica-api/';
 
-const api = axios.create({
-    baseURL: 'http://localhost/apimanoblack/'
+// Passing configuration object to axios
+axios({
+  method: 'get',
+  url: `${baseUrl}`,
+}).then((response) => {
+  console.log(response.data);
 });
-export default api;
+
+
+// Invoking get method to perform a GET request
+
+
+function getPerguntas() {
+    axios.get(`${baseUrl}`).then((response) => {
+        console.log(response.data);
+      });
+}
+export default getPerguntas;
