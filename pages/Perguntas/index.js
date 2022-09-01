@@ -1,16 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
 
 export default function Home({ navigation }) {
-  const baseUrl = 'https://apimanoblack.000webhostapp.com/cental-optica-api/';
+  const baseUrl = 'http://localhost/apimanoblack/perguntas/';
+  const [perguntas, setPerguntas] = useState();
+  // Utilização mais simples de busca axios
+  useEffect(() => {
+    axios
+      .get(baseUrl)
+      .then((response) => setPerguntas(response.data[0]['enunciado_pergunta']))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+  console.log(perguntas);
+  // Utilizando multi requisocões assíncronas com axios + promisses
   
-
-  const perguta = axios.get(`${baseUrl}`).then((response) => {
-    return response.data;
-  });
-  const [isPressHappy, setIsPressHappy] = useState(false);
+    const [isPressHappy, setIsPressHappy] = useState(false);
   const [isPressNeutral, setIsPressNeutral] = useState(false);
   const [isPressSad, setIsPressSad] = useState(false);
   const touchPropsHappy = {
@@ -41,7 +49,7 @@ export default function Home({ navigation }) {
     return (
       
     <View style={styles.container}>
-      <Text style={styles.text}>{`${perguta}`}</Text>
+      <Text style={styles.text}>{`${perguntas}`}</Text>
       <View style={styles.qButtonContainer}>
       <TouchableHighlight {...touchPropsHappy}>
       <Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>
