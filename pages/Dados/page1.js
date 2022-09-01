@@ -1,43 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacity, TextInput } from 'react-native';
+import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
+
 
 
 export default function Home({ navigation }) {
-  const [isPressF, setisPressF] = useState(false);
-  const [isPressM, setIsisPressM] = useState(false);
-  const touchPropsF = {
-    activeOpacity: 1,
-    underlayColor: 'black',
-    style: isPressF ? styles.btnPress : styles.btnNormal,
-    onHideUnderlay: () => setisPressF(true),
-    onShowUnderlay: () => setisPressF(true),
-    onPress: () => {setIsisPressM(false)},
-  };
-  const touchPropsM = {
-    activeOpacity: 1,
-    underlayColor: 'black',
-    style: isPressM ? styles.btnPress : styles.btnNormal,
-    onHideUnderlay: () => setIsisPressM(true),
-    onShowUnderlay: () => setIsisPressM(true),
-    onPress: () => {setisPressF(false)},
-  };
+  const [current, setCurrent] = useState("sexo");
 
     return (
 <View style={styles.container}>
     <View style={styles.SexoContainer}>
         <Text style={styles.text}>Sexo:</Text>
         <View style={styles.textButtonContainer}>
-        <Text style={styles.text}>F</Text>
-        <TouchableHighlight {...touchPropsF}>
-        <Text style={styles.buttonSexo}></Text>
-        </TouchableHighlight>
-        </View>
-        <View style={styles.textButtonContainer}>
-        <Text style={styles.text}>M</Text>
-        <TouchableHighlight {...touchPropsM}>
-        <Text style={styles.buttonSexo}></Text>
-        </TouchableHighlight>
+            <RadioButtonGroup style={styles.RadioButtonGroup}
+            selected={current}
+            onSelected={(value) => setCurrent(value)}
+            radioBackground="green"
+          >
+            <RadioButtonItem style={styles.buttonSexo} value="M" label={<Text style={styles.text}>M</Text>} />
+            <RadioButtonItem style={styles.buttonSexo} value="F" label={<Text style={styles.text}>F</Text>} />
+          </RadioButtonGroup>
         </View>
     </View>
       <View style={styles.inputContainer}>
@@ -120,6 +103,10 @@ export default function Home({ navigation }) {
       color:"#302D2D",
       fontFamily:'Oswald',
       fontSize:60,
+    },
+    RadioButtonGroup:{
+      flexDirection: 'row',
+    
     },
     
   });

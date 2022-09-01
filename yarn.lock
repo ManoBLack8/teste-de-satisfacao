@@ -6988,6 +6988,11 @@ expo-pwa@0.0.123:
     commander "2.20.0"
     update-check "1.5.3"
 
+expo-radio-button@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/expo-radio-button/-/expo-radio-button-1.0.8.tgz#5f5c411ae0a2da633ae4b56d87a59dfa23a47bae"
+  integrity sha512-sE+aCtq5/lL1Y24oVYMyGug0IPt0R3dXS6rSK2S+A+EFm6HYBj0ZKGA35ywSekS+/8lE9UwKS+ORwQlWsfXoUQ==
+
 expo-screen-orientation@~4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/expo-screen-orientation/-/expo-screen-orientation-4.3.0.tgz#8504e10ae978c44c31fe891d1c0e058dadae4eba"

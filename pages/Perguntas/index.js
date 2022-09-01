@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
 
+
 export default function Home({ navigation }) {
   const baseUrl = 'http://localhost/apimanoblack/perguntas/';
   const [perguntas, setPerguntas] = useState();
