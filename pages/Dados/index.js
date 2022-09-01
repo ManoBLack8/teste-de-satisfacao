@@ -7,12 +7,15 @@ export default function Home({ navigation }) {
     return (
 <View style={styles.container}>
   <View style={styles.inputContainer}>
-      <Text style={styles.text}>Nome: </Text>
-      <TextInput style={styles.input}/>
+      <TextInput placeholder='Digite seu nome' placeholderTextColor="#D0D0D0" style={styles.input}/>
+      
   </View>
   <View style={styles.inputContainer}>
-      <Text style={styles.text}>Telefone: </Text>
-      <TextInput style={styles.input} placeholder="(99) 99999-9999" keyboardType="numeric" placeholderTextColor="#D0D0D0"/>
+      <TextInput placeholder='Digite seu email' placeholderTextColor="#D0D0D0" style={styles.input}/>
+      
+  </View>
+  <View style={styles.inputContainer}>
+      <TextInput style={styles.input} placeholder="Seu telefone" keyboardType="numeric" placeholderTextColor="#D0D0D0"/>
   </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1')}>
       <Text style={styles.buttonText}>Proximo</Text>
@@ -42,7 +45,7 @@ export default function Home({ navigation }) {
     },
     input: {
       height: 70,
-      width:'40%',
+      width:'100%',
       fontSize:50,
       borderBottomWidth:2,
       marginTop:15,
