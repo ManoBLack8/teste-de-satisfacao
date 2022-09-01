@@ -24,7 +24,7 @@ export default function App() {
 
   
   const [loaded] = useFonts({
-    Oswald:require('./assets/fonts/Oswald_700Bold.ttf'),
+    Oswald:require('./assets/fonts/Oswald_400Regular.ttf'),
   });
   const [orientationIsLandscape,setOrientation]=useState(true)
   return (

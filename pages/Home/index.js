@@ -8,7 +8,7 @@ import {
 
 export default function Home({ navigation }) {
   const [loaded] = useFonts({
-    Oswald:require('./Oswald_700Bold.ttf'),
+    Oswald:require('./Oswald_400Regular.ttf'),
   });
     return (
 <View style={styles.container}>

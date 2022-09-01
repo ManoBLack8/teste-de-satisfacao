@@ -54,15 +54,14 @@ export default function Home({ navigation }) {
         
     },
     buttonSexo:{
+
         backgroundColor:"#F4EFF4",
         width:70,
         height:70,
         borderRadius: 50,
     },
     textButtonContainer:{
-        flexDirection:'row',
-        justifyContent:'flex-end',
-        alignItems:'center',
+     
     },
     inputContainer:{
       flexDirection:'row',
@@ -93,6 +92,7 @@ export default function Home({ navigation }) {
       fontSize:60,
     },
     RadioButtonGroup:{
+      flex:1,
       flexDirection: 'row',
     
     },
