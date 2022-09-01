@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
     </View>
       <View style={styles.inputContainer}>
       <Text style={styles.text}>Idade: </Text>
-      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#D0D0D0"/>
+      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#888888"/>
       </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
       <Text style={styles.buttonText}>Proximo</Text>
@@ -37,14 +37,14 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#302D2D",
+      backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'100%',
       height:'100%',
     },
     text:{
-      color:"#fff",
+      color:"#302D2D",
       marginHorizontal:50,
       fontSize:60,
       fontFamily: 'Oswald',
@@ -58,18 +58,6 @@ export default function Home({ navigation }) {
         width:70,
         height:70,
         borderRadius: 50,
-    },
-    btnPress: {
-      opacity:0.1,
-      backgroundColor:"#F4EFF4",
-      borderRadius: 50,
-      width:70,
-      height:70,
-    },
-    btnNormal: {
-      borderRadius: 50,
-      width:70,
-      height:70,
     },
     textButtonContainer:{
         flexDirection:'row',
@@ -89,10 +77,10 @@ export default function Home({ navigation }) {
       borderBottomWidth:3,
       marginTop:15,
       fontFamily: 'Oswald',
-      color:"#fff",
+      color:"#302D2D",
     },
     button:{
-      backgroundColor: "#F4EFF4",
+      backgroundColor: "#302D2D",
       paddingHorizontal:50,
       width:350,
       borderRadius:10,
@@ -100,7 +88,7 @@ export default function Home({ navigation }) {
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
+      color:"#fff",
       fontFamily:'Oswald',
       fontSize:60,
     },

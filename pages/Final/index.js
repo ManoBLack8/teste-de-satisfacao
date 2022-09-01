@@ -13,7 +13,8 @@ export default function Home({ navigation }) {
       style={styles.logo}
       source={require('./logoOt.jpg')}></Image>
     <View style={styles.textContainer}>
-      <Text style={styles.text}>Obrigado pela preferencia, volte sempre</Text>
+      <Text style={styles.text}>Obrigado pela preferencia!</Text>
+      <Text style={styles.text}>Volte sempre!</Text>
       </View>
       <StatusBar style="auto" />
     </View>
@@ -22,15 +23,20 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#302D2D",
+      backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'100%',
       height:'100%',
     },
+    textContainer:{
+      justifyContent:"center",
+      alignItems:'center',
+    },
     text:{
-      color:"#fff",
-      
+      color:"#302D2D",
+      justifyContent:"center",
+      alignItems:'center',
       fontSize:60,
       fontFamily: 'Oswald',
     },
@@ -48,8 +54,8 @@ export default function Home({ navigation }) {
       fontSize:60,
     },
     logo:{
-      width:200,
-      height:200,
+      width:250,
+      height:250,
       backgroundColor:"#fff",
       borderRadius:10,
     }

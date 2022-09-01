@@ -26,19 +26,19 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#302D2D",
+      backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'100%',
       height:'100%',
     },
     text:{
-      color:"#fff",
+      color:"#302D2D",
       fontSize:60,
       fontFamily: 'Oswald',
     },
     button:{
-      backgroundColor: "#F4EFF4",
+      backgroundColor: "#302D2D",
       
       width:200,
       borderRadius:10,
@@ -46,13 +46,13 @@ export default function Home({ navigation }) {
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
+      color:"#fff",
       fontFamily:'Oswald',
       fontSize:60,
     },
     logo:{
-      width:200,
-      height:200,
+      width:250,
+      height:250,
       backgroundColor:"#fff",
       borderRadius:10,
     }

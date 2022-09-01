@@ -7,15 +7,15 @@ export default function Home({ navigation }) {
     return (
 <View style={styles.container}>
   <View style={styles.inputContainer}>
-      <TextInput placeholder='Digite seu nome' placeholderTextColor="#D0D0D0" style={styles.input}/>
+      <TextInput placeholder='Digite seu nome' placeholderTextColor="#888888" style={styles.input}/>
       
   </View>
   <View style={styles.inputContainer}>
-      <TextInput placeholder='Digite seu email' placeholderTextColor="#D0D0D0" style={styles.input}/>
+      <TextInput placeholder='Digite seu email' placeholderTextColor="#888888" style={styles.input}/>
       
   </View>
   <View style={styles.inputContainer}>
-      <TextInput style={styles.input} placeholder="Seu telefone" keyboardType="numeric" placeholderTextColor="#D0D0D0"/>
+      <TextInput style={styles.input} placeholder="Seu telefone" keyboardType="numeric" placeholderTextColor="#888888"/>
   </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1')}>
       <Text style={styles.buttonText}>Proximo</Text>
@@ -27,7 +27,7 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#302D2D",
+      backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'100%',
@@ -45,15 +45,15 @@ export default function Home({ navigation }) {
     },
     input: {
       height: 70,
-      width:'100%',
+      width:'80%',
       fontSize:50,
       borderBottomWidth:2,
       marginTop:15,
       fontFamily: 'Oswald',
-      color:"#fff",
+      color:"#302D2D",
     },
     button:{
-      backgroundColor: "#F4EFF4",
+      backgroundColor: "#302D2D",
       paddingHorizontal:50,
       width:350,
       borderRadius:10,
@@ -61,7 +61,7 @@ export default function Home({ navigation }) {
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
+      color:"#fff",
       fontFamily:'Oswald',
       fontSize:60,
     },

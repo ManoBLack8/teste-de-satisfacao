@@ -76,14 +76,14 @@ export default function Home({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#302D2D",
+      backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'100%',
       height:'100%',
     },
     text:{
-      color:"#fff",
+      color:"#302D2D",
       fontSize:70,
       fontFamily: 'Oswald',
     },
@@ -111,7 +111,7 @@ export default function Home({ navigation }) {
       marginHorizontal:50,
     },
     button:{
-      backgroundColor: "#F4EFF4",
+      backgroundColor: "#302D2D",
       paddingHorizontal:50,
       width:350,
       borderRadius:10,
@@ -119,7 +119,7 @@ export default function Home({ navigation }) {
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
+      color:"#fff",
       fontFamily:'Oswald',
       fontSize:60,
     },
