@@ -10,14 +10,6 @@ export default function PrimeiroAcesso({ navigation }) {
       <TextInput placeholder='Digite o nome da loja' placeholderTextColor="#888888" style={styles.input}/>
       
   </View>
-  <View style={styles.inputContainer}>
-      <TextInput placeholder='Digite o usuario' placeholderTextColor="#888888" style={styles.input}/>
-      
-  </View>
-  <View style={styles.inputContainer}>
-      <TextInput placeholder='Digite a senha' placeholderTextColor="#888888" style={styles.input}/>
-      
-  </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Home')}>
       <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
