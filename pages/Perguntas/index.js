@@ -9,47 +9,33 @@ export default function Home({ navigation }) {
   const [current, setCurrent] = useState("satisfacao");
   const baseUrl = 'http://localhost/apimanoblack/perguntas/';
   const [perguntas, setPerguntas] = useState();
+  const selectHandler = (value) => {
+    onSelect(value);
+    setUserOption(value);
+  };
+  const Perguntas = (resposta) => {
+    const countPerguntas = perguntas.length;
+    for (let i = 0; i < countPerguntas; i++) {
+      const enunciado = perguntas[i]['enunciado_pergunta'];
+      const id_perguta = perguntas[i]['id_perguta'];
+      var arrayresultado = [];
+      arrayresultado['id_pergunta'] = id_perguta;
+      arrayresultado['id_resposta'] = resposta;
+      console.log(arrayresultado);
+    }
+  }
   // Utilização mais simples de busca axios
   useEffect(() => {
     axios
       .get(baseUrl)
-      .then((response) => setPerguntas(response.data[0]['enunciado_pergunta']))
+      .then((response) => setPerguntas(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
-  console.log(perguntas);
-  // Utilizando multi requisocões assíncronas com axios + promisses
-  
-    const [isPressHappy, setIsPressHappy] = useState(false);
-  const [isPressNeutral, setIsPressNeutral] = useState(false);
-  const [isPressSad, setIsPressSad] = useState(false);
-  const touchPropsHappy = {
-    activeOpacity: 1,
-    underlayColor: 'black',
-    style: isPressHappy ? styles.btnPress : styles.btnNormal,
-    onHideUnderlay: () => setIsPressHappy(true),
-    onShowUnderlay: () => setIsPressHappy(true),
-    onPress: () => {setIsPressSad(false);setIsPressNeutral(false)},
-  };
-  const touchPropsNeutral = {
-    activeOpacity: 1,
-    underlayColor: 'black',
-    style: isPressNeutral ? styles.btnPress : styles.btnNormal,
-    onHideUnderlay: () => setIsPressNeutral(true),
-    onShowUnderlay: () => setIsPressNeutral(true),
-    onPress: () => {setIsPressSad(false);setIsPressHappy(false)},
-  };
-  const touchPropsSad = {
-    activeOpacity: 1,
-    underlayColor: 'black',
-    style: isPressSad ? styles.btnPress : styles.btnNormal,
-    onHideUnderlay: () => setIsPressSad(true),
-    onShowUnderlay: () => setIsPressSad(true),
-    onPress: () => {setIsPressHappy(false);setIsPressNeutral(false)},
-  };
-  
-    return (
+  //() => navigation.navigate ('Obrigado')  
+
+  return (
       
     <View style={styles.container}>
       <Text style={styles.text}>{`${perguntas}`}</Text>
@@ -61,6 +47,7 @@ export default function Home({ navigation }) {
             selected={current}
             onSelected={(value) => setCurrent(value)}
             radioStyle={{ opacity: 0 }}
+            
           >
             <RadioButtonItem style={{ with: 100}} value="1" label={<Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>} />
             <RadioButtonItem style={{ with: 100}} value="2" label={<Image style={styles.questionImg} source={require('./neutralIcon.png')} ></Image>} />
@@ -68,7 +55,8 @@ export default function Home({ navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Obrigado')}>
+      <TouchableOpacity style={styles.button} onPress={() => {
+    Perguntas(current);}}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
@@ -129,11 +117,15 @@ export default function Home({ navigation }) {
       flexDirection: 'row',
     
     },
-    buttonSexo:{
-      backgroundColor:"#F4EFF4",
-      width:70,
-      height:70,
-      borderRadius: 50,
-  },
+    unselected: {
+      backgroundColor: 'red',
+      margin: 5,
+    },
+    selected: {
+      backgroundColor: 'blue',
+      margin: 6,
+      padding: 10,
+      borderRadius: 10,
+    },
     
   });
