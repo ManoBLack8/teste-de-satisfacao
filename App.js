@@ -4,6 +4,7 @@ import {useState} from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as ScreenOrientation from 'expo-screen-orientation'
+import PrimeiroAcesso from './pages/PrimeiroAcesso';
 import Home from './pages/Home';
 import Perguntas from './pages/Perguntas';
 import Obrigado from './pages/Obrigado';
@@ -30,7 +31,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName='PrimeiroAcesso' screenOptions={{headerShown: false}}>
+        <Stack.Screen name="PrimeiroAcesso" component={ PrimeiroAcesso } />
         <Stack.Screen name="Home" component={ Home } />
         <Stack.Screen name="Perguntas" component={ Perguntas } />
         <Stack.Screen name="Dados" component={ Dados } />
