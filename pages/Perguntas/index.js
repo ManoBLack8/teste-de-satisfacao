@@ -2,9 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
+import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 
 
 export default function Home({ navigation }) {
+  const [current, setCurrent] = useState("satisfacao");
   const baseUrl = 'http://localhost/apimanoblack/perguntas/';
   const [perguntas, setPerguntas] = useState();
   // Utilização mais simples de busca axios
@@ -52,18 +54,19 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.text}>{`${perguntas}`}</Text>
       <View style={styles.qButtonContainer}>
-      <TouchableHighlight {...touchPropsHappy}>
-      <Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>
-      </TouchableHighlight>
-
-      <TouchableHighlight {...touchPropsNeutral}>
-      <Image style={styles.questionImg} source={require('./neutralIcon.png')}></Image>
-      </TouchableHighlight>
-
-      <TouchableHighlight {...touchPropsSad}>
-      <Image style={styles.questionImg} source={require('./sadIcon.png')}></Image>
-      </TouchableHighlight>
-
+      <View style={styles.textButtonContainer}>
+            <RadioButtonGroup style={styles.RadioButtonGroup}
+            containerStyle={{flexDirection: 'row', alignItems: "center",
+            justifyContent: "space-evenly" }}
+            selected={current}
+            onSelected={(value) => setCurrent(value)}
+            radioStyle={{ opacity: 0 }}
+          >
+            <RadioButtonItem style={{ with: 100}} value="1" label={<Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>} />
+            <RadioButtonItem style={{ with: 100}} value="2" label={<Image style={styles.questionImg} source={require('./neutralIcon.png')} ></Image>} />
+            <RadioButtonItem style={{ with: 100}} value="3" label={<Image style={styles.questionImg} source={require('./sadIcon.png')} ></Image>} />
+          </RadioButtonGroup>
+        </View>
       </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Obrigado')}>
       <Text style={styles.buttonText}>Proximo</Text>
@@ -93,8 +96,6 @@ export default function Home({ navigation }) {
     },
     qButtonContainer:{
         flexDirection:'row',
-        
-        
     },
     btnPress: {
       opacity:0.2,
@@ -123,5 +124,16 @@ export default function Home({ navigation }) {
       fontFamily:'Oswald',
       fontSize:60,
     },
+    RadioButtonGroup:{
+      flex:1,
+      flexDirection: 'row',
+    
+    },
+    buttonSexo:{
+      backgroundColor:"#F4EFF4",
+      width:70,
+      height:70,
+      borderRadius: 50,
+  },
     
   });

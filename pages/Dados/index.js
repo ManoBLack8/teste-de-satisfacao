@@ -6,6 +6,8 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native
 export default function Home({ navigation }) {
     return (
 <View style={styles.container}>
+<Text style={styles.titulo}>Obrigado, agora preencha os seus dados:</Text>
+
   <View style={styles.inputContainer}>
       <TextInput placeholder='Digite seu nome' placeholderTextColor="#888888" style={styles.input}/>
       
@@ -64,6 +66,10 @@ export default function Home({ navigation }) {
       color:"#fff",
       fontFamily:'Oswald',
       fontSize:60,
-    },
+    },titulo:{
+      color:"#302D2D",
+      fontSize:70,
+      fontFamily: 'Oswald',
+    }
     
   });
