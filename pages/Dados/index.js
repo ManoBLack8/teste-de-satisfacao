@@ -37,7 +37,7 @@ export default function Home({ navigation }) {
     },
     text:{
       color:"#fff",
-      fontSize:70,
+      fontSize:60,
       fontFamily: 'Oswald',
     },
     inputContainer:{
@@ -68,7 +68,7 @@ export default function Home({ navigation }) {
       fontSize:60,
     },titulo:{
       color:"#302D2D",
-      fontSize:70,
+      fontSize:60,
       fontFamily: 'Oswald',
     }
     
