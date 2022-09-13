@@ -25,6 +25,15 @@ export default function Home({ navigation }) {
       width:'100%',
       height:'100%',
     },
+    contentContainer:{
+      borderWidth:5,
+      margin:10,
+      marginTop:20,
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      width:'95%',
+      height:'92%',
+    },
     text:{
       color:"#302D2D",
       fontSize:60,

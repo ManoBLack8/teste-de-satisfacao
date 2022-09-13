@@ -39,7 +39,7 @@ export default function Home({ navigation }) {
       
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <Text style={styles.textSmall}>Página: 1 de 5</Text>
+      <Text style={styles.textSmall}>Página: 3 de 5</Text>
       <Text style={styles.text}>lorem ipsum</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
@@ -57,7 +57,7 @@ export default function Home({ navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas2')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas4')}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

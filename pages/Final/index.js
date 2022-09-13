@@ -9,14 +9,16 @@ export default function Home({ navigation }) {
     }, 10000);
     return (
 <View style={styles.container}>
+  <View style={styles.contentContainer}>
     <Image 
       style={styles.logo}
       source={require('./logoOt.jpg')}></Image>
     <View style={styles.textContainer}>
-      <Text style={styles.text}>Obrigado pela preferencia!</Text>
-      <Text style={styles.text}>Volte sempre!</Text>
+      <Text style={styles.text}>Prontinho! Tenha um ótimo dia!</Text>
+      
       </View>
       <StatusBar style="auto" />
+    </View>
     </View>
     );
   }
@@ -29,6 +31,15 @@ export default function Home({ navigation }) {
       width:'100%',
       height:'100%',
     },
+    contentContainer:{
+      borderWidth:5,
+      margin:10,
+      marginTop:20,
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      width:'95%',
+      height:'92%',
+    },
     textContainer:{
       justifyContent:"center",
       alignItems:'center',
@@ -38,7 +49,7 @@ export default function Home({ navigation }) {
       justifyContent:"center",
       alignItems:'center',
       fontSize:60,
-      fontFamily: 'Oswald',
+      fontFamily: 'Crimson',
     },
     button:{
       backgroundColor: "#F4EFF4",
@@ -47,11 +58,6 @@ export default function Home({ navigation }) {
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
-    },
-    buttonText:{
-      color:"#302D2D",
-      fontFamily:'Oswald',
-      fontSize:60,
     },
     logo:{
       width:250,

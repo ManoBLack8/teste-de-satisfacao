@@ -6,8 +6,8 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native
 export default function Home({ navigation }) {
     return (
 <View style={styles.container}>
-<Text style={styles.titulo}>Obrigado, agora preencha os seus dados:</Text>
-
+  <View style={styles.contentContainer}>
+      <Text style={styles.text}>Caso queira, pode inserir abaixo seu contato:</Text>
   <View style={styles.inputContainer}>
       <TextInput placeholder='Digite seu nome' placeholderTextColor="#888888" style={styles.input}/>
       
@@ -19,10 +19,11 @@ export default function Home({ navigation }) {
   <View style={styles.inputContainer}>
       <TextInput style={styles.input} placeholder="Seu telefone" keyboardType="numeric" placeholderTextColor="#888888"/>
   </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas')}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
+      </View>
     </View>
     );
   }
@@ -35,10 +36,18 @@ export default function Home({ navigation }) {
       width:'100%',
       height:'100%',
     },
+    contentContainer:{
+      borderWidth:5,
+      margin:10,
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      width:'95%',
+      height:'92%',
+    },
     text:{
-      color:"#fff",
-      fontSize:60,
-      fontFamily: 'Oswald',
+      color:"#302D2D",
+      fontSize:50,
+      fontFamily: 'Crimson',
     },
     inputContainer:{
       flexDirection:'row',
@@ -51,25 +60,29 @@ export default function Home({ navigation }) {
       fontSize:50,
       borderBottomWidth:2,
       marginTop:15,
-      fontFamily: 'Oswald',
+      fontFamily: 'Crimson',
       color:"#302D2D",
     },
     button:{
-      backgroundColor: "#302D2D",
-      paddingHorizontal:50,
-      width:350,
+      backgroundColor: "#fff",
+      width:200,
+      height:100,
+      borderWidth:5,
+      borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#fff",
+      color:"#302D2D",
       fontFamily:'Oswald',
-      fontSize:60,
-    },titulo:{
+      fontSize:50,
+      marginBottom:10,
+    },
+    titulo:{
       color:"#302D2D",
       fontSize:60,
-      fontFamily: 'Oswald',
+      fontFamily: 'Crimson',
     }
     
   });
