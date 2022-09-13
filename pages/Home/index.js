@@ -14,7 +14,7 @@ export default function Home({ navigation }) {
       source={require('./logoOt.jpg')}></Image>
       <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1')}>
-      <Text style={styles.buttonText}>Inicio</Text>
+      <Text style={styles.buttonText}>Iniciar</Text>
       </TouchableOpacity>
       </View>
       </View>

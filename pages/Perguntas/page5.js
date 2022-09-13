@@ -17,7 +17,7 @@ export default function Home({ navigation }) {
       <TextInput style={styles.input}/>
     </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
-      <Text style={styles.buttonText}>Proximo</Text>
+      <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
       </View>

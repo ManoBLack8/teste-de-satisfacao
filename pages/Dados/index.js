@@ -20,7 +20,7 @@ export default function Home({ navigation }) {
       <TextInput style={styles.input} placeholder="Seu telefone" keyboardType="numeric" placeholderTextColor="#888888"/>
   </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas')}>
-      <Text style={styles.buttonText}>Proximo</Text>
+      <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
       </View>
