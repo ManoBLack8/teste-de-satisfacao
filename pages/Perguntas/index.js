@@ -40,7 +40,7 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <View style={styles.contentContainer}>
       <Text style={styles.textSmall}>Página: 1 de 5</Text>
-      <Text style={styles.text}>lorem ipsum</Text>
+      <Text style={styles.text}>{`${perguntas}`}</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
