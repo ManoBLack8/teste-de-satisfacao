@@ -3,42 +3,48 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
 import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
+import { array } from 'prop-types';
 
 
 export default function Home({ navigation }) {
   const [current, setCurrent] = useState("satisfacao");
   const baseUrl = 'http://localhost/apimanoblack/perguntas/';
-  const [perguntas, setPerguntas] = useState();
+  const [pergunta, setPergunta] = useState();
+  const [idPergunta, setId] = useState();
+  const [totalPergunta, setTotal] = useState();
   const selectHandler = (value) => {
     onSelect(value);
     setUserOption(value);
   };
-  const Perguntas = (resposta) => {
-    const countPerguntas = perguntas.length;
-    for (let i = 0; i < countPerguntas; i++) {
-      const enunciado = perguntas[i]['enunciado_pergunta'];
-      const id_perguta = perguntas[i]['id_perguta'];
-      var arrayresultado = [];
-      arrayresultado['id_pergunta'] = id_perguta;
-      arrayresultado['id_resposta'] = resposta;
-      console.log(arrayresultado);
-    }
-  }
   // Utilização mais simples de busca axios
-  useEffect(() => {
-    axios
-      .get(baseUrl)
-      .then((response) => setPerguntas(response.data))
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-  }, []);
-  //() => navigation.navigate ('Obrigado')  
+  let i = 0;
+  while (totalPergunta > i) {
+    useEffect(() => {
+      axios
+        .get(baseUrl)
+        .then((response) =>{ setPergunta(response.data[i].enunciado_pergunta), setId(response.data[i].id_perguta), setTotal(response.data.length)})
+        .catch((err) => {
+          console.error("ops! ocorreu um erro" + err);
+        });
+    }, []); 
+  }
 
+  const Enviar = (current) => {
+    const resposta = current;
+    var respostaArray = {};
+      respostaArray = {
+        idPergunta,
+        resposta
+      }
+      i++;
+      console.log(respostaArray);
+      console.log(i);
+  }
+  //() => navigation.navigate ('Obrigado') 
   return (
       
     <View style={styles.container}>
-      <Text style={styles.text}>{`${perguntas}`}</Text>
+      <Text style={styles.text}>{pergunta}</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
@@ -56,7 +62,7 @@ export default function Home({ navigation }) {
         </View>
       </View>
       <TouchableOpacity style={styles.button} onPress={() => {
-    Perguntas(current);}}>
+      Enviar(current);}}>
       <Text style={styles.buttonText}>Proximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
