@@ -10,6 +10,7 @@ export default function Home({ navigation }) {
 
     return (
 <View style={styles.container}>
+  <View style={styles.contentContainer}>
     <View style={styles.SexoContainer}>
         <Text style={styles.text}>Sexo:</Text>
         <View style={styles.textButtonContainer}>
@@ -27,10 +28,11 @@ export default function Home({ navigation }) {
       <Text style={styles.text}>Idade: </Text>
       <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#888888"/>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
-      <Text style={styles.buttonText}>Proximo</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dados')}>
+      <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
+    </View>
     </View>
     );
   }
@@ -43,11 +45,19 @@ export default function Home({ navigation }) {
       width:'100%',
       height:'100%',
     },
+    contentContainer:{
+      borderWidth:5,
+      margin:10,
+      alignItems: "center",
+      justifyContent: "space-evenly",
+      width:'95%',
+      height:'92%',
+    },
     text:{
       color:"#302D2D",
       marginHorizontal:50,
       fontSize:60,
-      fontFamily: 'Oswald',
+      fontFamily: 'Crimson',
     },
     SexoContainer:{
         flexDirection:'row',
@@ -75,21 +85,24 @@ export default function Home({ navigation }) {
       fontSize:50,
       borderBottomWidth:3,
       marginTop:15,
-      fontFamily: 'Oswald',
+      fontFamily: 'Crimson',
       color:"#302D2D",
     },
     button:{
-      backgroundColor: "#302D2D",
-      paddingHorizontal:50,
-      width:350,
+      backgroundColor: "#fff",
+      width:200,
+      height:100,
+      borderWidth:5,
+      borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#fff",
+      color:"#302D2D",
       fontFamily:'Oswald',
-      fontSize:60,
+      fontSize:50,
+      marginBottom:10,
     },
     RadioButtonGroup:{
       flex:1,
