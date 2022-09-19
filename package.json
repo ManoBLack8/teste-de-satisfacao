@@ -43,5 +43,17 @@
     "@babel/core": "^7.12.9",
     "@types/react-native": "~0.67.6"
   },
-  "private": true
+  "private": true,
+  "description": "��#\u0000 \u0000R\u0000e\u0000a\u0000c\u0000t\u0000-\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000-\u0000t\u0000e\u0000s\u0000t\u0000e\u0000-\u0000d\u0000e\u0000-\u0000s\u0000a\u0000t\u0000i\u0000s\u0000f\u0000a\u0000c\u0000a\u0000o\u0000\r\u0000 \u0000",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tokashiki-DEV/teste-de-satisfacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tokashiki-DEV/teste-de-satisfacao/issues"
+  },
+  "homepage": "https://github.com/Tokashiki-DEV/teste-de-satisfacao#readme"
 }
