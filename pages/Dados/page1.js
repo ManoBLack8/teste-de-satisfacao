@@ -15,6 +15,7 @@ export default function Home({ navigation }) {
         <Text style={styles.text}>Sexo:</Text>
         <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
+            containerStyle={{flexDirection: 'row'}}
             selected={current}
             onSelected={(value) => setCurrent(value)}
             radioBackground="green"

@@ -44,13 +44,9 @@ export default function Home({ navigation }) {
   return (
       
     <View style={styles.container}>
-<<<<<<< HEAD
-      <Text style={styles.text}>{pergunta}</Text>
-=======
       <View style={styles.contentContainer}>
       <Text style={styles.textSmall}>Página: 1 de 5</Text>
-      <Text style={styles.text}>{`${perguntas}`}</Text>
->>>>>>> adac510002e165f8c0c388a92985d084de140c42
+      <Text style={styles.text}>Como foi seu atendimento ?</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
@@ -67,14 +63,8 @@ export default function Home({ navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-<<<<<<< HEAD
-      <TouchableOpacity style={styles.button} onPress={() => {
-      Enviar(current);}}>
-      <Text style={styles.buttonText}>Proximo</Text>
-=======
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas2')}>
       <Text style={styles.buttonText}>Próximo</Text>
->>>>>>> adac510002e165f8c0c388a92985d084de140c42
       </TouchableOpacity>
       <StatusBar style="auto" />
       </View>

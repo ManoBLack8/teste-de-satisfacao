@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "MyReactNative",
-    "slug": "MyReactNative",
+    "name": "Teste de Satisfacão",
+    "slug": "teste-de-satisfacao",
     "version": "1.0.0",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logoOt.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logoOt.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,13 +20,19 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.rn_wp.android",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logoOt.jpg",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logoOt.jpg"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ce76ceac-9157-4150-8004-2d408155afe3"
+      }
     }
   }
 }
