@@ -11,7 +11,7 @@ export default function Home({ navigation }) {
       <View style={styles.contentContainer}>
       <Text style={styles.textSmall}>Página: 5 de 5</Text>
       <View style={styles.textContainer}>
-      <Text style={styles.text}>Já estamos finalizando. Caso queira, deixe aqui seu comentário escrito.</Text>
+      <Text style={styles.text}>Já estamos finalizando! Caso queira, escreva abaixo seu comentário ou observação </Text>
       </View>
       <View style={styles.inputContainer}>
       <TextInput style={styles.input}/>

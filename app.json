@@ -3,10 +3,10 @@
     "name": "Teste de Satisfacão",
     "slug": "teste-de-satisfacao",
     "version": "1.0.0",
-    "icon": "./assets/logoOt.jpg",
+    "icon": "./assets/logoOt.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/logoOt.jpg",
+      "image": "./assets/logoOt.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,16 +22,16 @@
     "android": {
       "package": "com.rn_wp.android",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logoOt.jpg",
+        "foregroundImage": "./assets/logoOt.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/logoOt.jpg"
+      "favicon": "./assets/logoOt.png"
     },
     "extra": {
       "eas": {
-        "projectId": "ce76ceac-9157-4150-8004-2d408155afe3"
+        "projectId": "a8c0d8bd-2d33-4cef-8fc8-7bac114cd5b0"
       }
     }
   }

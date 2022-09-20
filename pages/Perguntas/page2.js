@@ -5,41 +5,34 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } f
 import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 
 
-export default function Home({ navigation }) {
+export default function Home({ route, navigation }) {
+  const { master } = route.params;
   const [current, setCurrent] = useState("satisfacao");
   const baseUrl = 'http://localhost/apimanoblack/perguntas/';
   const [perguntas, setPerguntas] = useState();
+  const [totalPergunta, setTotal] = useState();
   const selectHandler = (value) => {
     onSelect(value);
     setUserOption(value);
   };
-  const Perguntas = (resposta) => {
-    const countPerguntas = perguntas.length;
-    for (let i = 0; i < countPerguntas; i++) {
-      const enunciado = perguntas[i]['enunciado_pergunta'];
-      const id_perguta = perguntas[i]['id_perguta'];
-      var arrayresultado = [];
-      arrayresultado['id_pergunta'] = id_perguta;
-      arrayresultado['id_resposta'] = resposta;
-      console.log(arrayresultado);
-    }
-  }
+  console.log(master);
+  const i = 1
   // Utilização mais simples de busca axios
-  useEffect(() => {
-    axios
-      .get(baseUrl)
-      .then((response) => setPerguntas(response.data))
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-  }, []);
+    useEffect(() => {
+      axios
+        .get(baseUrl)
+        .then((response) =>{ setPerguntas(response.data[1]), setTotal(response.data.length)})
+        .catch((err) => {
+          console.error("ops! ocorreu um erro" + err);
+        });
+    }, []);
   //() => navigation.navigate ('Obrigado')  
 
   return (
       
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <Text style={styles.textSmall}>Página: 2 de 5</Text>
+      <Text style={styles.textSmall}>Página: 2 de {totalPergunta}</Text>
       <Text style={styles.text}>Encontrei o que procurava</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>

@@ -2,7 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
-export default function Home({ navigation }) {
+export default function Home({ route, navigation }) {
+
+  const { loja } = route.params;
     return (
 <View style={styles.container}>
       <View style={styles.contentContainer}>
@@ -13,7 +15,11 @@ export default function Home({ navigation }) {
       style={styles.logo}
       source={require('./logoOt.jpg')}></Image>
       <View style={styles.buttonContainer}>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1',{
+        master: {
+          loja: loja
+        }
+      })}>
       <Text style={styles.buttonText}>Iniciar</Text>
       </TouchableOpacity>
       </View>

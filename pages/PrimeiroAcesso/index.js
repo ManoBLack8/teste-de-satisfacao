@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
@@ -8,6 +9,9 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native
 export default function PrimeiroAcesso({ navigation }) {
 
   const [nom_loja, setLoja] = useState();
+
+  
+
   const storeData = async (value) => {
     try {
       await AsyncStorage.setItem('@storage_Key', value)
@@ -19,7 +23,9 @@ export default function PrimeiroAcesso({ navigation }) {
     try {
       const value = await AsyncStorage.getItem('@storage_Key');
       if (value !== null ) {
-        navigation.navigate ('Home')
+        navigation.navigate ('Home', {
+          loja: value
+        })
       }
     } catch(e) {
       // error reading value
@@ -28,8 +34,25 @@ export default function PrimeiroAcesso({ navigation }) {
   getData();
   const Enviar = (value) => {
     storeData(value);
-    navigation.navigate ('Home')
+    const baseUrl = 'http://localhost/apimanoblack/lojas/';
+    axios.post(`${baseUrl}?send=add`, {
+      item: {nome: value},
+      type: 'products'
+  })
+      .then(response => {
+          const {data} = response;
+  
+          console.log(response);
+      })
+      .catch(err => {
+          console.error(err);
+      });
+  
+      navigation.navigate ('Home', {
+        loja: nom_loja
+      })
   }
+
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
@@ -89,3 +112,4 @@ export default function PrimeiroAcesso({ navigation }) {
     },
     
   });
+

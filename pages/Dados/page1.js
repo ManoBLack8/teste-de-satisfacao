@@ -2,11 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacity, TextInput } from 'react-native';
 import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
+import { PrimeiroAcesso } from "../PrimeiroAcesso";
 
 
-
-export default function Home({ navigation }) {
+export default function Home({ route, navigation }) {
   const [current, setCurrent] = useState("sexo");
+  const [Idade, setText] = useState("");
+  const { master } = route.params;
+console.log(Idade);
 
     return (
 <View style={styles.container}>
@@ -27,9 +30,15 @@ export default function Home({ navigation }) {
     </View>
       <View style={styles.inputContainer}>
       <Text style={styles.text}>Idade: </Text>
-      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#888888"/>
+      <TextInput style={styles.input} keyboardType="numeric" placeholder="  99" placeholderTextColor="#888888" onChangeText={newText => setText(newText)}/>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dados')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dados',{
+        master: {
+          loja: master.loja,
+          sexo: current,
+          idade: Idade
+        }
+      })}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
