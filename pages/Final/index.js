@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import axios from 'axios';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 
-export default function Home({ navigation }) {
-    setTimeout(() => {
-        navigation.navigate ('Home')
-    }, 10000);
+export default function Home({ route, navigation }) {
+  const { master } = route.params;
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas/';
+    console.log(master);
+    axios.post(`${baseUrl}?send=add`, {
+      item: {master: master},
+      type: 'products'
+  })
+      .then(response => {
+          const {data} = response;
+  
+          console.log(response);
+      })
+      .catch(err => {
+          console.error(err);
+      });
     return (
 <View style={styles.container}>
   <View style={styles.contentContainer}>

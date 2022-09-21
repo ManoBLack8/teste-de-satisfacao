@@ -7,25 +7,26 @@ import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 
 export default function Home({ route, navigation }) {
   const { master } = route.params;
+  console.log(master);
   const [current, setCurrent] = useState("satisfacao");
-  const baseUrl = 'http://localhost/apimanoblack/perguntas/';
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/perguntas/';
   const [perguntas, setPerguntas] = useState();
   const [totalPergunta, setTotal] = useState();
+  const [Idp, setPerId] = useState();
   const selectHandler = (value) => {
     onSelect(value);
     setUserOption(value);
   };
-  console.log(master);
-  const i = 1
+  const i = 1;
   // Utilização mais simples de busca axios
-    useEffect(() => {
-      axios
-        .get(baseUrl)
-        .then((response) =>{ setPerguntas(response.data[1]), setTotal(response.data.length)})
-        .catch((err) => {
-          console.error("ops! ocorreu um erro" + err);
-        });
-    }, []);
+  useEffect(() => {
+    axios
+      .get(baseUrl)
+      .then((response) =>{ setPerguntas(response.data[i]['enunciado_pergunta']), setTotal(response.data.length),  setPerId(response.data[i]['id_perguta'])})
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
   //() => navigation.navigate ('Obrigado')  
 
   return (
@@ -33,7 +34,7 @@ export default function Home({ route, navigation }) {
     <View style={styles.container}>
       <View style={styles.contentContainer}>
       <Text style={styles.textSmall}>Página: 2 de {totalPergunta}</Text>
-      <Text style={styles.text}>Encontrei o que procurava</Text>
+      <Text style={styles.text}>{perguntas}</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
@@ -50,7 +51,18 @@ export default function Home({ route, navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas3')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas3', {
+        master: {
+          cliente: master.cliente,
+          resposta:{
+            idp1: master.resposta.idp1,
+            rp1: master.resposta.rp1,
+            idp2: Idp,
+            rp2: current
+          }
+          
+        }
+      })}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

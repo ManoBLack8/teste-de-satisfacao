@@ -5,30 +5,23 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TouchableHighlight } f
 import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 
 
-export default function Home({ navigation }) {
+export default function Home({ route, navigation }) {
+  const { master } = route.params;
   const [current, setCurrent] = useState("satisfacao");
-  const baseUrl = 'http://localhost/apimanoblack/perguntas/';
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/perguntas/';
   const [perguntas, setPerguntas] = useState();
+  const [totalPergunta, setTotal] = useState();
+  const [idp, setPerId] = useState();
+  const i = 3;
   const selectHandler = (value) => {
     onSelect(value);
     setUserOption(value);
   };
-  const Perguntas = (resposta) => {
-    const countPerguntas = perguntas.length;
-    for (let i = 0; i < countPerguntas; i++) {
-      const enunciado = perguntas[i]['enunciado_pergunta'];
-      const id_perguta = perguntas[i]['id_perguta'];
-      var arrayresultado = [];
-      arrayresultado['id_pergunta'] = id_perguta;
-      arrayresultado['id_resposta'] = resposta;
-      console.log(arrayresultado);
-    }
-  }
   // Utilização mais simples de busca axios
   useEffect(() => {
     axios
       .get(baseUrl)
-      .then((response) => setPerguntas(response.data))
+      .then((response) =>{ setPerguntas(response.data[i]['enunciado_pergunta']), setTotal(response.data.length),  setPerId(response.data[i]['id_perguta'])})
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
@@ -39,8 +32,8 @@ export default function Home({ navigation }) {
       
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <Text style={styles.textSmall}>Página: 4 de 5</Text>
-      <Text style={styles.text}>Qualidade dos produtos e serviços</Text>
+      <Text style={styles.textSmall}>Página: 4 de {totalPergunta}</Text>
+      <Text style={styles.text}>{perguntas}</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
@@ -57,7 +50,22 @@ export default function Home({ navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5',{
+        master: {
+          cliente: master.cliente,
+          resposta:{
+            idp1: master.resposta.idp1,
+            rp1: master.resposta.rp1,
+            idp2: master.resposta.idp2,
+            rp2: master.resposta.rp2,
+            idp3: master.resposta.idp3,
+            rp3: master.resposta.rp3,
+            idp4: idp,
+            rp4: current
+          }
+          
+        }
+      })}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

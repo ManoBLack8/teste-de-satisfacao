@@ -1,22 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity,  TextInput } from 'react-native';
+import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 
-
-export default function Home({ navigation }) {
+export default function Home({ route, navigation }) {
+  const { master } = route.params;
+  const [comentario, setcoment] = useState("");
+  const selectHandler = (value) => {
+    onSelect(value);
+    setUserOption(value);
+  };
   return (
       
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <Text style={styles.textSmall}>Página: 5 de 5</Text>
       <View style={styles.textContainer}>
       <Text style={styles.text}>Já estamos finalizando! Caso queira, escreva abaixo seu comentário ou observação </Text>
       </View>
       <View style={styles.inputContainer}>
-      <TextInput style={styles.input}/>
+      <TextInput style={styles.input} onChangeText={newEmail => setcoment(newEmail)}/>
     </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final',{
+        master:{
+          cliente: master.cliente,
+          resposta:{
+            idp1: master.resposta.idp1,
+            rp1: master.resposta.rp1,
+            idp2: master.resposta.idp2,
+            rp2: master.resposta.rp2,
+            idp3: master.resposta.idp3,
+            rp3: master.resposta.rp3,
+            idp4: master.resposta.idp4,
+            rp4: master.resposta.rp4,
+            comentario: comentario
+        }
+      }})}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

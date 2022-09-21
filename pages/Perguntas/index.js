@@ -9,9 +9,10 @@ import { array } from 'prop-types';
 export default function Home({ route, navigation }) {
   const { master } = route.params;
   const [current, setCurrent] = useState("satisfacao");
-  const baseUrl = 'http://localhost/apimanoblack/perguntas/';
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/perguntas/';
   const [perguntas, setPerguntas] = useState();
   const [totalPergunta, setTotal] = useState();
+  const [idp, setPerId] = useState();
   const i = 0;
   const selectHandler = (value) => {
     onSelect(value);
@@ -21,13 +22,11 @@ export default function Home({ route, navigation }) {
     useEffect(() => {
       axios
         .get(baseUrl)
-        .then((response) =>{ setPerguntas(response.data[i]), setTotal(response.data.length)})
+        .then((response) =>{ setPerguntas(response.data[i]['enunciado_pergunta']), setTotal(response.data.length),  setPerId(response.data[i]['id_perguta'])})
         .catch((err) => {
           console.error("ops! ocorreu um erro" + err);
         });
     }, []);
-
-  console.log(perguntas);
 
 
   //() => navigation.navigate ('Obrigado') 
@@ -36,7 +35,7 @@ export default function Home({ route, navigation }) {
     <View style={styles.container}>
       <View style={styles.contentContainer}>
       <Text style={styles.textSmall}>Página: 1 de {totalPergunta}</Text>
-      <Text style={styles.text}>Como foi seu atendimento ?</Text>
+      <Text style={styles.text}>{perguntas}</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
             <RadioButtonGroup style={styles.RadioButtonGroup}
@@ -57,7 +56,7 @@ export default function Home({ route, navigation }) {
         master: {
           cliente: master,
           resposta: {
-            idp1: perguntas.id_perguta,
+            idp1: idp,
             rp1: current
           }
         }

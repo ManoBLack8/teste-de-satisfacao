@@ -34,19 +34,6 @@ export default function PrimeiroAcesso({ navigation }) {
   getData();
   const Enviar = (value) => {
     storeData(value);
-    const baseUrl = 'http://localhost/apimanoblack/lojas/';
-    axios.post(`${baseUrl}?send=add`, {
-      item: {nome: value},
-      type: 'products'
-  })
-      .then(response => {
-          const {data} = response;
-  
-          console.log(response);
-      })
-      .catch(err => {
-          console.error(err);
-      });
   
       navigation.navigate ('Home', {
         loja: nom_loja
