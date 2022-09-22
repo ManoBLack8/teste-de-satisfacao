@@ -82,7 +82,6 @@ export default function Home({ route, navigation }) {
       height:'100%',
     },
     contentContainer:{
-      borderWidth:5,
       margin:10,
       marginTop:20,
       alignItems: "center",
@@ -108,7 +107,7 @@ export default function Home({ route, navigation }) {
       backgroundColor: "#fff",
       width:200,
       height:100,
-      borderWidth:5,
+      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",

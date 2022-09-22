@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function Home({ route, navigation }) {
   const { master } = route.params;
-  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas/';
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas';
     console.log(master);
     axios.post(`${baseUrl}?send=add`, {
       item: {master: master},
@@ -14,11 +14,17 @@ export default function Home({ route, navigation }) {
   })
       .then(response => {
           const {data} = response;
+          setTimeout(() => {
+            navigation.navigate ('Home')
+        }, 10000);
   
           console.log(response);
       })
       .catch(err => {
           console.error(err);
+          setTimeout(() => {
+            navigation.navigate ('Home')
+        }, 10000);
       });
     return (
 <View style={styles.container}>
@@ -45,7 +51,7 @@ export default function Home({ route, navigation }) {
       height:'100%',
     },
     contentContainer:{
-      borderWidth:5,
+      
       margin:10,
       marginTop:20,
       alignItems: "center",

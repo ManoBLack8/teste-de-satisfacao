@@ -1,10 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
-export default function Home({ route, navigation }) {
-
-  const { loja } = route.params;
+export default function Home({ navigation }) {
+  const [nom_loja, setLoja] = useState();
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@storage_Key');
+      if (value !== null ) {
+        setLoja(value);
+      }
+    } catch(e) {
+      // error reading value
+    }
+  }
+  const loja = nom_loja;
     return (
 <View style={styles.container}>
       <View style={styles.contentContainer}>
@@ -38,7 +49,6 @@ export default function Home({ route, navigation }) {
       height:'100%',
     },
     contentContainer:{
-      borderWidth:5,
       margin:10,
       alignItems: "center",
       justifyContent: "space-evenly",
@@ -66,7 +76,7 @@ export default function Home({ route, navigation }) {
     button:{
       backgroundColor: "#fff",
       width:200,
-      borderWidth:5,
+      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
