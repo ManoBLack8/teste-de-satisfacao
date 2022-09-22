@@ -7,7 +7,6 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function Home({ route, navigation }) {
   const { master } = route.params;
   const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas';
-    console.log(master);
     axios.post(`${baseUrl}?send=add`, {
       item: {master: master},
       type: 'products'
