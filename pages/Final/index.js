@@ -9,7 +9,13 @@ export default function Home({ route, navigation }) {
   const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas';
     axios.post(`${baseUrl}?send=add`, {
       item: {master: master},
-      type: 'products'
+      type: 'products',
+      headers: {                  
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Authorization", 
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE" ,
+        "Content-Type": "application/json;charset=UTF-8"                   
+    },
   })
       .then(response => {
           const {data} = response;
