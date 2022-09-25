@@ -15,6 +15,7 @@ export default function Home({ navigation }) {
       // error reading value
     }
   }
+  getData();
   const loja = nom_loja;
     return (
 <View style={styles.container}>

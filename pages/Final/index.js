@@ -5,17 +5,16 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 
 export default function Home({ route, navigation }) {
+  const headers = {
+    'Content-Type': 'text/plain',
+    'Access-Control-Allow-Origin': '*'
+};
   const { master } = route.params;
   const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas';
     axios.post(`${baseUrl}?send=add`, {
+      headers,
       item: {master: master},
-      type: 'products',
-      headers: {                  
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Authorization", 
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE" ,
-        "Content-Type": "application/json;charset=UTF-8"                   
-    },
+      type: 'products'
   })
       .then(response => {
           const {data} = response;
