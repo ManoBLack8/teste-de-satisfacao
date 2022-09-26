@@ -5,30 +5,22 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 
 export default function Home({ route, navigation }) {
-  const headers = {
-    'Content-Type': 'text/plain',
-    'Access-Control-Allow-Origin': '*'
-};
   const { master } = route.params;
-  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/respostas';
-    axios.post(`${baseUrl}?send=add`, {
-      headers,
-      item: {master: master},
-      type: 'products'
+  console.log(master);
+    axios.post('http://localhost/apimanoblack/respostas/', {
+      item: master ,
+      headers:{"Content-Type" : "application/json"}
   })
       .then(response => {
-          const {data} = response;
+        console.log(response);
           setTimeout(() => {
             navigation.navigate ('Home')
         }, 10000);
   
-          console.log(response);
+          
       })
-      .catch(err => {
-          console.error(err);
-          setTimeout(() => {
-            navigation.navigate ('Home')
-        }, 10000);
+      .catch(error => {
+          console.error(error.response);
       });
     return (
 <View style={styles.container}>
