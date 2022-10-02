@@ -3,10 +3,12 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 
 //() => navigation.navigate ('Home')
 export default function PrimeiroAcesso({ navigation }) {
+  const [selectedLoja, setSelectedLoja] = useState();
 
   const [nom_loja, setLoja] = useState();
 
@@ -42,12 +44,17 @@ export default function PrimeiroAcesso({ navigation }) {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.text}>Selecione a loja: </Text>
         <View style={styles.inputContainer}>
-            <TextInput placeholder='Digite o nome da loja' 
-            name="username"
-            onChangeText={setLoja}
-            placeholderTextColor="#888888" style={styles.input}/>
-            
+        <Picker
+        style={styles.pickerContainer}
+        selectedValue={selectedLoja}
+        onValueChange={(itemValue, itemIndex) =>
+        setSelectedLoja(itemValue)
+  }>
+  <Picker.Item style={styles.pickerItem} label="Loja X" value="X" />
+  <Picker.Item style={styles.pickerItem} label="Loja Y" value="Y" />
+</Picker>
         </View>
       <TouchableOpacity style={styles.button} onPress={() => Enviar(nom_loja)}>
       <Text style={styles.buttonText}>Entrar</Text>
@@ -66,14 +73,16 @@ export default function PrimeiroAcesso({ navigation }) {
       height:'100%',
     },
     text:{
-      color:"#fff",
+      color:"#302D2D",
       fontSize:70,
-      fontFamily: 'Oswald',
+      fontFamily: 'Arial',
     },
     inputContainer:{
-      flexDirection:'row',
-      justifyContent:'center',
-      alignItems:'center',
+      width:300,
+      height:200,
+    },
+    pickerItem:{
+      fontSize:40,
     },
     input: {
       height: 70,
