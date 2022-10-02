@@ -58,6 +58,7 @@ console.log(Idade);
     contentContainer:{
       margin:10,
       alignItems: "center",
+      borderWidth:3,
       justifyContent: "space-evenly",
       width:'95%',
       height:'92%',
@@ -66,7 +67,7 @@ console.log(Idade);
       color:"#302D2D",
       marginHorizontal:50,
       fontSize:60,
-      fontFamily: 'Crimson',
+      fontFamily: 'Arial',
     },
     SexoContainer:{
         flexDirection:'row',
@@ -93,25 +94,22 @@ console.log(Idade);
       width:100,
       fontSize:50,
       borderBottomWidth:3,
-      marginTop:15,
-      fontFamily: 'Crimson',
+      fontFamily: 'Times',
       color:"#302D2D",
     },
     button:{
-      backgroundColor: "#fff",
-      width:200,
+      backgroundColor: "#302D2D",
+      width:220,
       height:100,
-      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
-      fontFamily:'Oswald',
+      color:"#fff",
+      fontFamily:'Arial',
       fontSize:50,
-      marginBottom:10,
     },
     RadioButtonGroup:{
       flex:1,

@@ -47,7 +47,7 @@ export default function Home({ route, navigation }) {
       height:'100%',
     },
     contentContainer:{
-      
+      borderWidth:3,
       margin:10,
       marginTop:20,
       alignItems: "center",
@@ -64,7 +64,7 @@ export default function Home({ route, navigation }) {
       justifyContent:"center",
       alignItems:'center',
       fontSize:60,
-      fontFamily: 'Crimson',
+      fontFamily: 'Arial',
     },
     button:{
       backgroundColor: "#F4EFF4",

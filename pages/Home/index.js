@@ -51,6 +51,7 @@ export default function Home({ navigation }) {
     },
     contentContainer:{
       margin:10,
+      borderWidth:3,
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'95%',
@@ -64,8 +65,8 @@ export default function Home({ navigation }) {
     },
     text:{
       color:"#302D2D",
-      fontSize:60,
-      fontFamily: 'Crimson',
+      fontSize:50,
+      fontFamily: 'Arial',
       marginBottom:10,
     },
     buttonContainer:{
@@ -75,19 +76,17 @@ export default function Home({ navigation }) {
       marginBottom:20,
     },
     button:{
-      backgroundColor: "#fff",
+      backgroundColor: "#302D2D",
       width:200,
-      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
-      fontFamily:'Oswald',
+      color:"#fff",
+      fontFamily:'Arial',
       fontSize:50,
-      marginBottom:10,
     },
     logo:{
       width:250,

@@ -10,6 +10,7 @@ import Perguntas from './pages/Perguntas';
 import Perguntas2 from './pages/Perguntas/page2';
 import Perguntas3 from './pages/Perguntas/page3';
 import Perguntas4 from './pages/Perguntas/page4';
+import Perguntas45 from './pages/Perguntas/page4-5.js';
 import Perguntas5 from './pages/Perguntas/page5';
 import Obrigado from './pages/Obrigado';
 import Dados from './pages/Dados';
@@ -31,6 +32,8 @@ export default function App() {
   const [loaded] = useFonts({
     Oswald:require('./assets/fonts/Oswald_400Regular.ttf'),
     Crimson:require('./assets/fonts/CrimsonPro.ttf'),
+    Arial:require('./assets/fonts/ARIAL.ttf'),
+    Times:require('./assets/fonts/TimesRegular.ttf'),
   });
   const [orientationIsLandscape,setOrientation]=useState(true)
   return (
@@ -43,6 +46,7 @@ export default function App() {
         <Stack.Screen name="Perguntas2" component={ Perguntas2 } />
         <Stack.Screen name="Perguntas3" component={ Perguntas3 } />
         <Stack.Screen name="Perguntas4" component={ Perguntas4 } />
+        <Stack.Screen name="Perguntas4-5" component={ Perguntas45 } />
         <Stack.Screen name="Perguntas5" component={ Perguntas5 } />
         <Stack.Screen name="Dados" component={ Dados } />
         <Stack.Screen name="Dadospage1" component={ page1 } />

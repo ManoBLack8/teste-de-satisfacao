@@ -34,7 +34,7 @@ export default function Home({ route, navigation }) {
       
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <Text style={styles.textSmall}>Página: 3 de 5</Text>
+      <Text style={styles.textSmall}>Página: 3 de {totalPergunta}</Text>
       <Text style={styles.text}>{perguntas}</Text>
       <View style={styles.qButtonContainer}>
       <View style={styles.textButtonContainer}>
@@ -84,6 +84,7 @@ export default function Home({ route, navigation }) {
     contentContainer:{
       margin:10,
       marginTop:20,
+      borderWidth:3,
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'95%',
@@ -92,32 +93,30 @@ export default function Home({ route, navigation }) {
     textSmall:{
       color:"#302D2D",
       fontSize:30,
-      fontFamily: 'Crimson',
+      fontFamily: 'Arial',
     },
     text:{
       color:"#302D2D",
-      fontSize:70,
-      fontFamily: 'Crimson',
+      fontSize:65,
+      fontFamily: 'Arial',
     },
     questionImg:{
         width:125,
         height:125,
     },
     button:{
-      backgroundColor: "#fff",
-      width:200,
+      backgroundColor: "#302D2D",
+      width:220,
       height:100,
-      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
-      fontFamily:'Oswald',
+      color:"#fff",
+      fontFamily:'Arial',
       fontSize:50,
-      marginBottom:10,
     },
     unselected: {
       backgroundColor: 'red',

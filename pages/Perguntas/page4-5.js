@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity,  TextInput } from 'react-native';
-import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
+import {Picker} from '@react-native-picker/picker';
 
 export default function Home({ route, navigation }) {
+  const [selectedFuncionario, setSelectedFuncionario] = useState();
   const { master } = route.params;
   const [comentario, setcoment] = useState("");
   const selectHandler = (value) => {
@@ -14,28 +14,23 @@ export default function Home({ route, navigation }) {
   return (
       
     <View style={styles.container}>
-      <View style={styles.contentContainer}>
-      <View style={styles.textContainer}>
-      <Text style={styles.text}>Já estamos finalizando! Caso queira, escreva abaixo seu comentário ou observação: </Text>
-      </View>
+        <View style={styles.contentContainer}>
+            <View style={styles.textContainer}>
+            <Text style={styles.text}>Fui atendido por: </Text>
+        </View>
       <View style={styles.inputContainer}>
-      <TextInput style={styles.input} onChangeText={newEmail => setcoment(newEmail)}/>
+      <Picker
+        style={styles.pickerContainer}
+        selectedValue={selectedFuncionario}
+        onValueChange={(itemValue, itemIndex) =>
+        setSelectedFuncionario(itemValue)
+  }>
+  <Picker.Item style={styles.pickerItem} label="Otavio" value="otavio" />
+  <Picker.Item style={styles.pickerItem} label="Mario" value="mario" />
+</Picker>
     </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final',{
-        master:{
-          cliente: master.cliente,
-          resposta:{
-            idp1: master.resposta.idp1,
-            rp1: master.resposta.rp1,
-            idp2: master.resposta.idp2,
-            rp2: master.resposta.rp2,
-            idp3: master.resposta.idp3,
-            rp3: master.resposta.rp3,
-            idp4: master.resposta.idp4,
-            rp4: master.resposta.rp4,
-            comentario: comentario
-        }
-      }})}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5',{
+      })}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
@@ -91,10 +86,15 @@ export default function Home({ route, navigation }) {
         fontFamily:'Arial',
         fontSize:50,
       },
+    pickerContainer:{
+    },
+    pickerItem:{
+        fontSize:40,
+        fontFamily:'Arial',
+    },
     inputContainer:{
-        flexDirection:'row',
-        justifyContent:'flex-start',
-        alignItems:'center',
+        width:300,
+        height:200,
       },
     input: {
         height: 70,

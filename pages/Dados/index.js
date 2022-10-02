@@ -51,6 +51,7 @@ export default function Home({ route, navigation }) {
     },
     contentContainer:{
       margin:10,
+      borderWidth:3,
       alignItems: "center",
       justifyContent: "space-evenly",
       width:'95%',
@@ -58,8 +59,8 @@ export default function Home({ route, navigation }) {
     },
     text:{
       color:"#302D2D",
-      fontSize:50,
-      fontFamily: 'Crimson',
+      fontSize:45,
+      fontFamily: 'Arial',
     },
     inputContainer:{
       flexDirection:'row',
@@ -72,24 +73,22 @@ export default function Home({ route, navigation }) {
       fontSize:50,
       borderBottomWidth:2,
       marginTop:15,
-      fontFamily: 'Crimson',
+      fontFamily: 'Times',
       color:"#302D2D",
     },
     button:{
-      backgroundColor: "#fff",
-      width:200,
+      backgroundColor: "#302D2D",
+      width:220,
       height:100,
-      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
-      fontFamily:'Oswald',
+      color:"#fff",
+      fontFamily:'Arial',
       fontSize:50,
-      marginBottom:10,
     },
     titulo:{
       color:"#302D2D",

@@ -50,7 +50,7 @@ export default function Home({ route, navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5',{
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas4-5',{
         master: {
           cliente: master.cliente,
           resposta:{
@@ -83,7 +83,7 @@ export default function Home({ route, navigation }) {
       height:'100%',
     },
     contentContainer:{
-      
+      borderWidth:3,
       margin:10,
       marginTop:20,
       alignItems: "center",
@@ -94,32 +94,30 @@ export default function Home({ route, navigation }) {
     textSmall:{
       color:"#302D2D",
       fontSize:30,
-      fontFamily: 'Crimson',
+      fontFamily: 'Arial',
     },
     text:{
       color:"#302D2D",
-      fontSize:70,
-      fontFamily: 'Crimson',
+      fontSize:65,
+      fontFamily: 'Arial',
     },
     questionImg:{
         width:125,
         height:125,
     },
     button:{
-      backgroundColor: "#fff",
-      width:200,
+      backgroundColor: "#302D2D",
+      width:220,
       height:100,
-      
       borderColor:"#302D2D",
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
     },
     buttonText:{
-      color:"#302D2D",
-      fontFamily:'Oswald',
+      color:"#fff",
+      fontFamily:'Arial',
       fontSize:50,
-      marginBottom:10,
     },
     unselected: {
       backgroundColor: 'red',
