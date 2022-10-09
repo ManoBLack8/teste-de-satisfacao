@@ -44,9 +44,9 @@ export default function Home({ route, navigation }) {
             radioStyle={{ opacity: 0 }}
             
           >
-            <RadioButtonItem style={{ with: 100}} value="1" label={<Image style={styles.questionImg} source={require('./happyIcon.png')} ></Image>} />
-            <RadioButtonItem style={{ with: 100}} value="2" label={<Image style={styles.questionImg} source={require('./neutralIcon.png')} ></Image>} />
-            <RadioButtonItem style={{ with: 100}} value="3" label={<Image style={styles.questionImg} source={require('./sadIcon.png')} ></Image>} />
+            <RadioButtonItem style={{ with: 100}} value="1" label={<Image style={current == 1 ? styles.selected : styles.questionImg} source={require('./happyIcon.png')} ></Image>} />
+            <RadioButtonItem style={{ with: 100}} value="2" label={<Image style={current == 2 ? styles.selected : styles.questionImg} source={require('./neutralIcon.png')} ></Image>} />
+            <RadioButtonItem style={{ with: 100}} value="3" label={<Image style={current == 3 ? styles.selected : styles.questionImg} source={require('./sadIcon.png')} ></Image>} />
           </RadioButtonGroup>
         </View>
       </View>
@@ -124,10 +124,11 @@ export default function Home({ route, navigation }) {
       margin: 5,
     },
     selected: {
-      backgroundColor: 'blue',
-      margin: 5,
-      padding: 10,
-      borderRadius: 10,
+      width:125,
+      height:125,
+      borderColor:"#302D2D",
+      borderWidth: 4,
+      borderRadius: 10
     },
     
   });

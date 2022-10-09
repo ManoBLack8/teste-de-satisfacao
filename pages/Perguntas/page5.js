@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity,  TextInput } from 'react-native';
-import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 
 export default function Home({ route, navigation }) {
   const { master } = route.params;
@@ -21,7 +19,7 @@ export default function Home({ route, navigation }) {
       <View style={styles.inputContainer}>
       <TextInput style={styles.input} onChangeText={newEmail => setcoment(newEmail)}/>
     </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Final',{
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Final',{
         master:{
           cliente: master.cliente,
           resposta:{
@@ -33,6 +31,7 @@ export default function Home({ route, navigation }) {
             rp3: master.resposta.rp3,
             idp4: master.resposta.idp4,
             rp4: master.resposta.rp4,
+            funcionario: master.resposta.funcionario,
             comentario: comentario
         }
       }})}>

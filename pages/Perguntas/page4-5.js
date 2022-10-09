@@ -1,16 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { StyleSheet, Text, View, TouchableOpacity,  TextInput } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 export default function Home({ route, navigation }) {
-  const [selectedFuncionario, setSelectedFuncionario] = useState();
   const { master } = route.params;
-  const [comentario, setcoment] = useState("");
-  const selectHandler = (value) => {
-    onSelect(value);
-    setUserOption(value);
-  };
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/funcionarios/?id='+master.cliente.loja ;
+  const [selectedFuncionario, setSelectedFuncionario] = useState();
+  const [Funcionario, setFuncionario] = useState();
+  const [fu, setComprimento] = useState();
+  useEffect(() => {
+    axios
+      .get(baseUrl)
+      .then((response) =>{
+        console.log(response.data.length);
+        
+            axios.get(baseUrl).then(response => {
+              // do something with response
+              let users = []
+              for (let i = 0; i < response.data.length; i++) {
+                users.push(<Picker.Item style={styles.pickerItem} label={response.data[i]["nome_funcionario"]} value={response.data[i]["id_funcionario"]} />);
+              
+              }
+              setFuncionario(users);
+            })
+
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
+  let users = [];
+
+  let promises = [];
+  
+  console.log(Funcionario);
   return (
       
     <View style={styles.container}>
@@ -25,11 +51,24 @@ export default function Home({ route, navigation }) {
         onValueChange={(itemValue, itemIndex) =>
         setSelectedFuncionario(itemValue)
   }>
-  <Picker.Item style={styles.pickerItem} label="Otavio" value="otavio" />
-  <Picker.Item style={styles.pickerItem} label="Mario" value="mario" />
+  {Funcionario}
 </Picker>
     </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5',{
+        master:{
+          cliente: master.cliente,
+          resposta:{
+            idp1: master.resposta.idp1,
+            rp1: master.resposta.rp1,
+            idp2: master.resposta.idp2,
+            rp2: master.resposta.rp2,
+            idp3: master.resposta.idp3,
+            rp3: master.resposta.rp3,
+            idp4: master.resposta.idp4,
+            rp4: master.resposta.rp4,
+            funcionario: selectedFuncionario
+        }
+      }
       })}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>

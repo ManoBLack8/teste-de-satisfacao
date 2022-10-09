@@ -10,8 +10,6 @@ import {Picker} from '@react-native-picker/picker';
 export default function PrimeiroAcesso({ navigation }) {
   const [selectedLoja, setSelectedLoja] = useState();
 
-  const [nom_loja, setLoja] = useState();
-
   
 
   const storeData = async (value) => {
@@ -38,7 +36,7 @@ export default function PrimeiroAcesso({ navigation }) {
     storeData(value);
   
       navigation.navigate ('Home', {
-        loja: nom_loja
+        loja: selectedLoja
       })
   }
 
@@ -52,11 +50,13 @@ export default function PrimeiroAcesso({ navigation }) {
         onValueChange={(itemValue, itemIndex) =>
         setSelectedLoja(itemValue)
   }>
-  <Picker.Item style={styles.pickerItem} label="Loja X" value="X" />
-  <Picker.Item style={styles.pickerItem} label="Loja Y" value="Y" />
+  <Picker.Item style={styles.pickerItem} label="Matriz" value="1" />
+  <Picker.Item style={styles.pickerItem} label="Três Corações" value="2" />
+  <Picker.Item style={styles.pickerItem} label="Central" value="3" />
+  <Picker.Item style={styles.pickerItem} label="Joalheria Silva" value="4" />
 </Picker>
         </View>
-      <TouchableOpacity style={styles.button} onPress={() => Enviar(nom_loja)}>
+      <TouchableOpacity style={styles.button} onPress={() => Enviar(selectedLoja)}>
       <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
