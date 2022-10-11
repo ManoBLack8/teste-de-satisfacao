@@ -8,7 +8,7 @@ export default function
 Home({ route, navigation }) {
   const { master } = route.params;
   console.log(master);
-    axios.post('http://localhost/apimanoblack/respostas/', {
+    axios.post('http://teste-de-satisfacao.herokuapp.com/respostas/', {
       item: master ,
       headers:{"Content-Type" : "application/json"}
   })
