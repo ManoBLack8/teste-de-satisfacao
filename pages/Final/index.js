@@ -4,10 +4,11 @@ import axios from 'axios';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 
-export default function Home({ route, navigation }) {
+export default function 
+Home({ route, navigation }) {
   const { master } = route.params;
   console.log(master);
-    axios.post('http://teste-de-satisfacao.herokuapp.com/respostas/', {
+    axios.post('http://localhost/apimanoblack/respostas/', {
       item: master ,
       headers:{"Content-Type" : "application/json"}
   })

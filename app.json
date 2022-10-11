@@ -3,6 +3,7 @@
     "name": "Teste de Satisfacão",
     "slug": "teste-de-satisfacao",
     "version": "1.0.0",
+    "runtimeVersion": "1.001",
     "icon": "./assets/logoOt.png",
     "userInterfaceStyle": "light",
     "splash": {

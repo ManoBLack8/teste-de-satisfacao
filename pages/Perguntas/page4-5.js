@@ -51,7 +51,9 @@ export default function Home({ route, navigation }) {
         onValueChange={(itemValue, itemIndex) =>
         setSelectedFuncionario(itemValue)
   }>
+    <Picker.Item style={styles.pickerItem} label="Selecine" value=" " />
   {Funcionario}
+  <Picker.Item style={styles.pickerItem} label="Outra" value="0" />
 </Picker>
     </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5',{
