@@ -1,22 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 export default function Home({ navigation }) {
+  
+  
   const [nom_loja, setLoja] = useState();
+  const [Logo, setLogo] = useState();
   const getData = async () => {
     try {
       const value = await AsyncStorage.getItem('@storage_Key');
       if (value !== null ) {
         setLoja(value);
+        const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/lojas/?logo='+value;
+          axios
+            .get(baseUrl)
+            .then((response) =>{ setLogo(response.data)})
+            .catch((err) => {
+              console.error("ops! ocorreu um erro" + err);
+            });
+        
       }
     } catch(e) {
       // error reading value
     }
   }
   getData();
+  
+  console.log(Logo);
   const loja = nom_loja;
+  
     return (
 <View style={styles.container}>
       <View style={styles.contentContainer}>
@@ -25,7 +40,7 @@ export default function Home({ navigation }) {
       </View>
       <Image 
       style={styles.logo}
-      source={require('./logoOt.jpg')}></Image>
+      source={Logo}></Image>
       <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Dadospage1',{
         master: {

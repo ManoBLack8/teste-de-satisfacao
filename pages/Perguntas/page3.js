@@ -52,7 +52,8 @@ export default function Home({ route, navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas4',{
+      <TouchableOpacity style={styles.button} onPress={
+        () => navigation.navigate ('Perguntas4',{
         master: {
           cliente: master.cliente,
           resposta:{

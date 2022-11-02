@@ -14,13 +14,12 @@ export default function Home({ route, navigation }) {
     axios
       .get(baseUrl)
       .then((response) =>{
-        console.log(response.data.length);
         
             axios.get(baseUrl).then(response => {
               // do something with response
               let users = []
               for (let i = 0; i < response.data.length; i++) {
-                users.push(<Picker.Item style={styles.pickerItem} label={response.data[i]["nome_funcionario"]} value={response.data[i]["id_funcionario"]} />);
+                users.push(<Picker.Item key={i} style={styles.pickerItem} label={response.data[i]["nome_funcionario"]} value={response.data[i]["id_funcionario"]} />);
               
               }
               setFuncionario(users);
@@ -35,7 +34,7 @@ export default function Home({ route, navigation }) {
   let users = [];
 
   let promises = [];
-  
+  console.log(master);
   console.log(Funcionario);
   return (
       
@@ -54,6 +53,7 @@ export default function Home({ route, navigation }) {
     <Picker.Item style={styles.pickerItem} label="Selecine" value=" " />
   {Funcionario}
   <Picker.Item style={styles.pickerItem} label="Outra" value="0" />
+  <Picker.Item style={styles.pickerItem} label="Não Lembro" value="lembra" />
 </Picker>
     </View>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas5',{

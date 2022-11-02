@@ -9,7 +9,6 @@ export default function Home({ route, navigation }) {
   const [current, setCurrent] = useState("sexo");
   const [Idade, setText] = useState("");
   const { master } = route.params;
-console.log(Idade);
 
     return (
 <View style={styles.container}>
