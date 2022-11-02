@@ -8,6 +8,25 @@ export default function Home({ route, navigation }) {
   const [nome, setText] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTel] = useState("");
+
+  const Enviar = () => {
+    if(email){
+      navigation.navigate ('Perguntas', {
+        master: {
+          loja: master.loja,
+          sexo: master.sexo,
+          idade: master.idade,
+          nome: nome,
+          email: email,
+          telefone: telefone
+        } 
+      });
+    }else{
+      alert("Preencha o campo de Email");
+    }
+    
+
+  }
     return (
 <View style={styles.container}>
   <View style={styles.contentContainer}>
@@ -23,16 +42,7 @@ export default function Home({ route, navigation }) {
   <View style={styles.inputContainer}>
       <TextInput style={styles.input} placeholder="Seu telefone" keyboardType="numeric" placeholderTextColor="#888888" onChangeText={newTel => setTel(newTel)}/>
   </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas', {
-        master: {
-          loja: master.loja,
-          sexo: master.sexo,
-          idade: master.idade,
-          nome: nome,
-          email: email,
-          telefone: telefone
-        } 
-      })}>
+      <TouchableOpacity style={styles.button} onPress={Enviar}>
       <Text style={styles.buttonText}>Próximo</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />

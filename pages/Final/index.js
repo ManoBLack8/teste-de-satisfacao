@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
@@ -7,6 +7,14 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function 
 Home({ route, navigation }) {
   const { master } = route.params;
+  const [Logo, setLogo] = useState();
+  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/lojas/?logo='+master.cliente.loja;
+  axios
+            .get(baseUrl)
+            .then((response) =>{ setLogo(response.data)})
+            .catch((err) => {
+              console.error("ops! ocorreu um erro" + err);
+            });
     axios.post('http://teste-de-satisfacao.herokuapp.com/respostas/', {
       item: master ,
       headers:{"Content-Type" : "application/json"}
@@ -26,7 +34,7 @@ Home({ route, navigation }) {
   <View style={styles.contentContainer}>
     <Image 
       style={styles.logo}
-      source={require('./logoOt.jpg')}></Image>
+      source={Logo}></Image>
     <View style={styles.textContainer}>
       <Text style={styles.text}>Prontinho! Tenha um ótimo dia!</Text>
       
