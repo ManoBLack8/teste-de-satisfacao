@@ -35,7 +35,6 @@ export default function App() {
     Arial:require('./assets/fonts/ARIAL.ttf'),
     Times:require('./assets/fonts/TimesRegular.ttf'),
   });
-  const [orientationIsLandscape,setOrientation]=useState(true)
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
