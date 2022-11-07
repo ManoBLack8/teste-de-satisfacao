@@ -50,7 +50,7 @@ export default function Home({ route, navigation }) {
         onValueChange={(itemValue, itemIndex) =>
         setSelectedFuncionario(itemValue)
   }>
-    <Picker.Item style={styles.pickerItem} label="Selecine" value=" " />
+    <Picker.Item style={styles.pickerItem} label="Selecine:" value=" " />
   {Funcionario}
   <Picker.Item style={styles.pickerItem} label="Outra" value="0" />
   <Picker.Item style={styles.pickerItem} label="Não Lembro" value="lembra" />

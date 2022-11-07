@@ -49,6 +49,7 @@ export default function PrimeiroAcesso({ navigation }) {
         onValueChange={(itemValue, itemIndex) =>
         setSelectedLoja(itemValue)
   }>
+  <Picker.Item style={styles.pickerItem} label="Selecine:" value="" />
   <Picker.Item style={styles.pickerItem} label="Matriz" value="1" />
   <Picker.Item style={styles.pickerItem} label="Três Corações" value="2" />
   <Picker.Item style={styles.pickerItem} label="Central" value="3" />

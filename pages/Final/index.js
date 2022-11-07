@@ -34,7 +34,7 @@ Home({ route, navigation }) {
   <View style={styles.contentContainer}>
     <Image 
       style={styles.logo}
-      source={Logo}></Image>
+      source={{uri: Logo}}></Image>
     <View style={styles.textContainer}>
       <Text style={styles.text}>Prontinho! Tenha um ótimo dia!</Text>
       

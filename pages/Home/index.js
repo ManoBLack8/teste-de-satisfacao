@@ -9,6 +9,7 @@ export default function Home({ navigation }) {
   
   const [nom_loja, setLoja] = useState();
   const [Logo, setLogo] = useState();
+  
   const getData = async () => {
     try {
       const value = await AsyncStorage.getItem('@storage_Key');
@@ -32,7 +33,9 @@ export default function Home({ navigation }) {
   
   console.log(Logo);
   const loja = nom_loja;
-  
+  if(nom_loja < 1){
+    navigation.navigate ('PrimeiroAcesso');
+  }
     return (
 <View style={styles.container}>
       <View style={styles.contentContainer}>
