@@ -51,7 +51,7 @@ export default function PrimeiroAcesso({ navigation }) {
   <Picker.Item style={styles.pickerItem} label="Selecione:" value="" />
   <Picker.Item style={styles.pickerItem} label="Matriz" value="1" />
   <Picker.Item style={styles.pickerItem} label="Três Corações" value="2" />
-  <Picker.Item style={styles.pickerItem} label="Central" value="3" />
+  <Picker.Item style={styles.pickerItem} label="Ópitica" value="3" />
   <Picker.Item style={styles.pickerItem} label="Joalheria Silva" value="4" />
 </Picker>
         </View>
