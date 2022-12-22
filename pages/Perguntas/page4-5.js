@@ -6,7 +6,7 @@ import {Picker} from '@react-native-picker/picker';
 
 export default function Home({ route, navigation }) {
   const { master } = route.params;
-  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/funcionarios/?id='+master.cliente.loja ;
+  const baseUrl = 'http://teste-de-satisfacao-app.herokuapp.com/funcionarios/?id='+master.cliente.loja ;
   const [selectedFuncionario, setSelectedFuncionario] = useState();
   const [Funcionario, setFuncionario] = useState();
   const [fu, setComprimento] = useState();

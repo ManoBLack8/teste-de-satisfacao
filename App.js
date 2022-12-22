@@ -16,6 +16,7 @@ import Obrigado from './pages/Obrigado';
 import Dados from './pages/Dados';
 import page1 from './pages/Dados/page1';
 import Final from './pages/Final';
+import Processos from './pages/Processos';
 import api from './src/Services/Api';
 
 
@@ -49,6 +50,7 @@ export default function App() {
         <Stack.Screen name="Perguntas5" component={ Perguntas5 } />
         <Stack.Screen name="Dados" component={ Dados } />
         <Stack.Screen name="Dadospage1" component={ page1 } />
+        <Stack.Screen name="Processos" component={ Processos } />
         <Stack.Screen name="Final" component={ Final } />
       </Stack.Navigator>
     </NavigationContainer>

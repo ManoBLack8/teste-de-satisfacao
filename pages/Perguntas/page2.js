@@ -8,7 +8,7 @@ import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 export default function Home({ route, navigation }) {
   const { master } = route.params;
   const [current, setCurrent] = useState("satisfacao");
-  const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/perguntas/';
+  const baseUrl = 'http://teste-de-satisfacao-app.herokuapp.com/perguntas/';
   const [perguntas, setPerguntas] = useState();
   const [totalPergunta, setTotal] = useState();
   const [Idp, setPerId] = useState();

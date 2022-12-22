@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
       const value = await AsyncStorage.getItem('@storage_Key');
       if (value !== null ) {
         setLoja(value);
-        const baseUrl = 'http://teste-de-satisfacao.herokuapp.com/lojas/?logo='+value;
+        const baseUrl = 'http://teste-de-satisfacao-app.herokuapp.com/lojas/?logo='+value;
           
         axios
             .get(baseUrl)
