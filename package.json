@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "proxy": "http://teste-de-satisfacao-app.herokuapp.com/",
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
@@ -31,7 +31,7 @@
     "expo-splash-screen": "~0.17.5",
     "expo-sqlite": "~11.0.0",
     "expo-status-bar": "~1.4.2",
-    "expo-updates": "^0.15.6",
+    "expo-updates": "~0.15.6",
     "material-dashboard-react": "^1.10.0",
     "prop-types": "^15.8.1",
     "ra-data-json-server": "^4.2.7",
@@ -43,7 +43,7 @@
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-web": "~0.18.9",
+    "react-native-web": "~0.18.7",
     "xmldom": "^0.6.0",
     "yarn": "^1.22.19"
   },

@@ -27,7 +27,26 @@ export default function Home({ route, navigation }) {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
- 
+
+  const Enviar = () => {
+    navigation.navigate ('Perguntas4',{
+      master: {
+        cliente: master.cliente,
+        resposta:{
+          idp1: master.resposta.idp1,
+          rp1: master.resposta.rp1,
+          idp2: master.resposta.idp2,
+          rp2: master.resposta.rp2,
+          idp3: idp,
+          rp3: current
+        }
+        
+      }})
+  }
+  
+  if(current != "satisfacao"){
+    Enviar()
+  }
   //() => navigation.navigate ('Obrigado')  
 
   return (
@@ -52,22 +71,6 @@ export default function Home({ route, navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={
-        () => navigation.navigate ('Perguntas4',{
-        master: {
-          cliente: master.cliente,
-          resposta:{
-            idp1: master.resposta.idp1,
-            rp1: master.resposta.rp1,
-            idp2: master.resposta.idp2,
-            rp2: master.resposta.rp2,
-            idp3: idp,
-            rp3: current
-          }
-          
-        }})}>
-      <Text style={styles.buttonText}>Próximo</Text>
-      </TouchableOpacity>
       <StatusBar style="auto" />
       </View>
     </View>

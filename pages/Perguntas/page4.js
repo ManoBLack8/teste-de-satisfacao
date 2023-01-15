@@ -26,6 +26,29 @@ export default function Home({ route, navigation }) {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
+
+  const Enviar = () => {
+    navigation.navigate ('Perguntas4-5',{
+      master: {
+        cliente: master.cliente,
+        resposta:{
+          idp1: master.resposta.idp1,
+          rp1: master.resposta.rp1,
+          idp2: master.resposta.idp2,
+          rp2: master.resposta.rp2,
+          idp3: master.resposta.idp3,
+          rp3: master.resposta.rp3,
+          idp4: idp,
+          rp4: current
+        }
+        
+      }
+    })
+  }
+
+  if(current != "satisfacao"){
+    Enviar()
+  }
   //() => navigation.navigate ('Obrigado')  
 
   return (
@@ -50,24 +73,6 @@ export default function Home({ route, navigation }) {
           </RadioButtonGroup>
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate ('Perguntas4-5',{
-        master: {
-          cliente: master.cliente,
-          resposta:{
-            idp1: master.resposta.idp1,
-            rp1: master.resposta.rp1,
-            idp2: master.resposta.idp2,
-            rp2: master.resposta.rp2,
-            idp3: master.resposta.idp3,
-            rp3: master.resposta.rp3,
-            idp4: idp,
-            rp4: current
-          }
-          
-        }
-      })}>
-      <Text style={styles.buttonText}>Próximo</Text>
-      </TouchableOpacity>
       <StatusBar style="auto" />
       </View>
     </View>

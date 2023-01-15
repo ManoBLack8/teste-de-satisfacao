@@ -10,7 +10,6 @@ export default function Home({ route, navigation }) {
   const [telefone, setTel] = useState("");
 
   const Enviar = () => {
-    if(email){
       navigation.navigate ('Perguntas', {
         master: {
           loja: master.loja,
@@ -21,9 +20,6 @@ export default function Home({ route, navigation }) {
           telefone: telefone
         } 
       });
-    }else{
-      alert("Preencha o campo de Email");
-    }
     
 
   }
