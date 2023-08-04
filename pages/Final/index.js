@@ -6,7 +6,7 @@ export default function
 Home({ route, navigation }) {
   const { master } = route.params;
 
-    axios.post('http://teste-de-satisfacao-app.herokuapp.com/respostas/', {
+    axios.post('http://192.168.15.26/loja/respostas/', {
     item: master,
     headers:{"Content-Type" : "application/json"}
   })

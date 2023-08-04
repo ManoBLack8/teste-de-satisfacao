@@ -9,7 +9,7 @@ import { array } from 'prop-types';
 export default function Home({ route, navigation }) {
   const { master } = route.params;
   const [current, setCurrent] = useState("satisfacao");
-  const baseUrl = 'http://teste-de-satisfacao-app.herokuapp.com/perguntas/';
+  const baseUrl = 'http://192.168.15.26/loja/perguntas/';
   const [perguntas, setPerguntas] = useState();
   const [totalPergunta, setTotal] = useState();
   const [idp, setPerId] = useState();
