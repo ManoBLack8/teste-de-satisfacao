@@ -9,7 +9,7 @@ Home({ route, navigation }) {
   const { master } = route.params;
   const [Logo, setLogo] = useState();
 
-  const baseUrl = 'http://192.168.15.26/loja/lojas/?logo='+master.cliente.loja;
+  const baseUrl = 'http://192.168.100.12/apimanoblack/lojas/?logo='+master.cliente.loja;
     axios
     .get(baseUrl)
     .then((response) =>{ setLogo(response.data)})

@@ -6,7 +6,7 @@ import {Picker} from '@react-native-picker/picker';
 
 export default function Home({ route, navigation }) {
   const { master } = route.params;
-  const baseUrl = 'http://192.168.15.26/loja/funcionarios/?id='+master.cliente.loja ;
+  const baseUrl = 'http://192.168.100.12/apimanoblack/funcionarios/?id='+master.cliente.loja ;
   const [selectedFuncionario, setSelectedFuncionario] = useState();
   const [Funcionario, setFuncionario] = useState();
   const [fu, setComprimento] = useState();

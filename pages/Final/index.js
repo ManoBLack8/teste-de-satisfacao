@@ -6,7 +6,7 @@ export default function
 Home({ route, navigation }) {
   const { master } = route.params;
 
-    axios.post('http://192.168.15.26/loja/respostas/', {
+    axios.post('http://192.168.100.12/apimanoblack/respostas/', {
     item: master,
     headers:{"Content-Type" : "application/json"}
   })

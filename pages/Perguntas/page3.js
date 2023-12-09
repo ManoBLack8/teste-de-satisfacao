@@ -8,7 +8,7 @@ import RadioButtonGroup, { RadioButtonItem } from "expo-radio-button";
 export default function Home({ route, navigation }) {
   const { master } = route.params;
   const [current, setCurrent] = useState("satisfacao");
-  const baseUrl = 'http://192.168.15.26/loja/perguntas/';
+  const baseUrl = 'http://192.168.100.12/apimanoblack/perguntas/';
   const [perguntas, setPerguntas] = useState();
   const [totalPergunta, setTotal] = useState();
   const [idp, setPerId] = useState();

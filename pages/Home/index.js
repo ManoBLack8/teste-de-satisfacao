@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
       const value = await AsyncStorage.getItem('@storage_Key');
       if (value !== null ) {
         setLoja(value);
-        const baseUrl = 'http://192.168.15.26/loja/lojas/?logo='+value;
+        const baseUrl = 'http://192.168.100.12/apimanoblack/lojas/?logo='+value;
           
         axios
             .get(baseUrl)
